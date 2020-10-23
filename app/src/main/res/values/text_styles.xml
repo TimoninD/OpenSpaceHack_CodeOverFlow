@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseRegular">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="BaseMedium">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="BaseBold">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="BaseSemiBold">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+    </style>
+
+    <style name="TextViewH19White" parent="BaseMedium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="TextViewH12Blue113" parent="BaseMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/blue_113</item>
+    </style>
+
+    <style name="TextViewH14Blue113" parent="BaseMedium">
+        <item name="android:textColor">@color/blue_113</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TitleStyle" parent="BaseBold">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/blue_113</item>
+    </style>
+</resources>

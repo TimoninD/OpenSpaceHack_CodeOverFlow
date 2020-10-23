@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OpenSpaceApp</string>
+
+    <string name="address_title">Твои адреса</string>
+    <string name="scanner_title">Сканер</string>
+    <string name="history_title">История</string>
+    <string name="setting_title">Настройки</string>
+</resources>
