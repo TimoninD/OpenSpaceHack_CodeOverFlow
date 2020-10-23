@@ -10,6 +10,7 @@ import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.model.storage.Prefs
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.codeoverflow.openspaceapp.di.globalNavScopeId
+import ru.codeoverflow.openspaceapp.extension.updatePaddingTopOnApplySystemWindowInsets
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 
 

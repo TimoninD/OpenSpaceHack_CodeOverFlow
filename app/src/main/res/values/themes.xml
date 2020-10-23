@@ -11,9 +11,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="editTextStyle">@style/BaseEditText</item>
-        <item name="android:windowBackground">@color/grey_f9f</item>
+        <item name="android:windowBackground">@color/grey_f2f</item>
         <item name="textInputStyle">@style/TextInputLayout</item>
         <!-- Widgets. -->
-        <item name="android:button">@style/BaseButton</item>
+        <item name="android:buttonStyle">@style/BaseButton</item>
     </style>
 </resources>
