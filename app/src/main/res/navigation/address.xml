@@ -5,5 +5,13 @@
     app:startDestination="@id/addressFragment">
     <fragment
         android:id="@+id/addressFragment"
-        android:name="ru.codeoverflow.openspaceapp.ui.fragment.address.AddressFragment" />
+        android:name="ru.codeoverflow.openspaceapp.ui.fragment.address.AddressFragment" >
+        <action
+            android:id="@+id/action_addressFragment_to_detailAddressFragment"
+            app:destination="@id/detailAddressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailAddressFragment"
+        android:name="ru.codeoverflow.openspaceapp.ui.fragment.detailaddress.DetailAddressFragment"/>
 </navigation>

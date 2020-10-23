@@ -2,6 +2,7 @@ package ru.codeoverflow.openspaceapp.ui.fragment.address
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import kotlinx.android.synthetic.main.fragment_address.*
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
@@ -23,7 +24,9 @@ class AddressFragment : BaseFragment() {
 
     private val adapter: ListDelegationAdapter<List<BaseAddress>> by lazy {
         ListDelegationAdapter<List<BaseAddress>>(
-            addressAdapterDelegate { },
+            addressAdapterDelegate {
+                findNavController().navigate(AddressFragmentDirections.actionAddressFragmentToDetailAddressFragment())
+            },
             addressAddAdapterDelegate { }
         ).apply {
             items = listOf(AddAddress())
