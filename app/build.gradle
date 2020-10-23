@@ -89,6 +89,10 @@ dependencies {
     def input_mask_version = '6.0.0'
     implementation "com.redmadrobot:input-mask-android:$input_mask_version"
 
+    //Decoro
+    def decoro = '1.5.0'
+    implementation "ru.tinkoff.decoro:decoro:$decoro"
+
     //VereficationEditText
     def verification_edit_text = "2.0.6"
     implementation "com.alimuzaffar.lib:pinentryedittext:$verification_edit_text"

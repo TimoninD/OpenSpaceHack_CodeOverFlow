@@ -5,6 +5,7 @@
     <string name="scanner_title">Сканер</string>
     <string name="history_title">История</string>
     <string name="setting_title">Настройки</string>
+
     <string name="address_add">Добавить адрес</string>
 
     <string name="apartment_type">Квартира</string>
@@ -27,4 +28,11 @@
     <string name="detail_address_price">%s руб.</string>
     <string name="detail_address_payed">Оплачено</string>
 
+    <!-- SingIn -->
+    <string name="sign_in_enter_phone_number">Введите номер телефона</string>
+    <string name="sign_in_we_will_send_password">Мы отправим вам временный пароль на этот номер телефона</string>
+
+    <string name="hint_phone">+7 (000) 000 00 00</string>
+    <string name="mask_phone">+7 ([000]) [000] [00] [00]</string>
+    <string name="sign_in_next">Далее</string>
 </resources>

@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
-    <EditText
-        android:id="@+id/etTest"
+    <TextView
+        android:id="@+id/tvPhoneTitle"
+        style="@style/BaseMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_marginTop="70dp"
+        android:text="@string/sign_in_enter_phone_number"
+        android:textColor="@color/black_1f2"
+        android:textSize="32sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPhoneDescription"
+        style="@style/BaseRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_in_we_will_send_password"
+        android:textColor="@color/black_1f2"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneTitle" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        style="@style/BaseEditText.Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="@string/hint_phone"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneDescription"
+        tools:text="+7" />
 
     <Button
-        android:id="@+id/btnTest"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnNext"
+        style="@style/BaseButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Войти"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etTest"
-        />
+        android:layout_marginBottom="35dp"
+        android:text="@string/sign_in_next"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:enabled="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
