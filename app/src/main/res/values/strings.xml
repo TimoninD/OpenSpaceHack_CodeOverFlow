@@ -5,4 +5,11 @@
     <string name="scanner_title">Сканер</string>
     <string name="history_title">История</string>
     <string name="setting_title">Настройки</string>
+    <string name="address_add">Добавить адрес</string>
+
+    <string name="apartment_type">Квартира</string>
+    <string name="house_type">Дом</string>
+    <string name="dacha_type">Дача</string>
+    <string name="office_type">Офис</string>
+
 </resources>

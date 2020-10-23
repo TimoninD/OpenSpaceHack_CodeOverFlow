@@ -32,6 +32,11 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="TextViewH14Blue113SemiBold" parent="BaseSemiBold">
+        <item name="android:textColor">@color/blue_113</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
     <style name="TitleStyle" parent="BaseBold">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/blue_113</item>
