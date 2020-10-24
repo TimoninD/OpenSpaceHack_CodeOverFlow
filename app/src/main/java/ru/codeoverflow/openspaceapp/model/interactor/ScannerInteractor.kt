@@ -1,10 +1,11 @@
 package ru.codeoverflow.openspaceapp.model.interactor
 
+import org.koin.core.KoinComponent
 import ru.codeoverflow.openspaceapp.extension.toFilePart
-import ru.codeoverflow.openspaceapp.model.server.OpenSpaceApi
+import ru.codeoverflow.openspaceapp.model.server.OpenSpaceApiML
 import java.io.File
 
-class ScannerInteractor(private val api: OpenSpaceApi) {
+class ScannerInteractor(private val api: OpenSpaceApiML) : KoinComponent {
 
-    fun postMeterPhoto(image: File) = api.postMeterPhoto(image.toFilePart())
+    suspend fun postMeterPhoto(image: File) = api.postMeterPhoto(image.toFilePart())
 }
