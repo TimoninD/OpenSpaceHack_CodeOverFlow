@@ -3,10 +3,7 @@ package ru.codeoverflow.openspaceapp
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import ru.codeoverflow.openspaceapp.di.appModule
-import ru.codeoverflow.openspaceapp.di.interactorModule
-import ru.codeoverflow.openspaceapp.di.networkModule
-import ru.codeoverflow.openspaceapp.di.viewModelModule
+import ru.codeoverflow.openspaceapp.di.*
 
 class App : Application() {
 
@@ -16,7 +13,7 @@ class App : Application() {
             androidContext(this@App)
             modules(
                 listOf(
-                    appModule, networkModule, viewModelModule, interactorModule
+                    appModule, networkModule, viewModelModule, interactorModule, networkModuleMl
                 )
             )
         }
