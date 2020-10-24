@@ -1,6 +1,7 @@
 package ru.codeoverflow.openspaceapp.ui.fragment.address
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -24,34 +25,12 @@ class AddressFragment : BaseFragment() {
 
     private val vm: AddressViewModel by viewModel()
 
-    /*private val testList = listOf(
-        AddressModel(
-            type = AddressType.APARTMENT,
-            address = "ул. Даниила Тимонина, д. 106",
-            listMeter = listOf(
-                MeterModel(DetailAddressType.HOT_WATER, 15, 120.203f),
-                MeterModel(DetailAddressType.COLD_WATER, 20, null),
-                MeterModel(DetailAddressType.GAS, 5, null),
-                MeterModel(DetailAddressType.LIGHTNING, null, null)
-            ),
-            totalPrice = 120.203f
-        ),
-        AddressModel(
-            type = AddressType.HOUSE, address = "ул. Мира, д. 106", listMeter = listOf(
-                MeterModel(DetailAddressType.HOT_WATER, 15, 120.203f),
-                MeterModel(DetailAddressType.COLD_WATER, 20, null),
-                MeterModel(DetailAddressType.GAS, 5, null),
-                MeterModel(DetailAddressType.LIGHTNING, null, null)
-            ), totalPrice = 120.203f
-        )
-    )*/
-
     private val adapter: ListDelegationAdapter<List<BaseAddress>> by lazy {
         ListDelegationAdapter<List<BaseAddress>>(
             addressAdapterDelegate {
                 findNavController().navigate(
                     AddressFragmentDirections.actionAddressFragmentToDetailAddressFragment(
-                        it
+                        it.id
                     )
                 )
             },
@@ -65,7 +44,8 @@ class AddressFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         rvAddress.adapter = adapter
         vm.listAddress.observe(viewLifecycleOwner, Observer {
-            adapter.items = it
+            adapter.items = listOf(AddAddress()) + it
+            adapter.notifyDataSetChanged()
         })
     }
 }

@@ -32,7 +32,7 @@ android {
         jvmTarget = '1.8'
     }
     applicationVariants.all { variant ->
-        variant.buildConfigField('String', 'BASE_URL', '"https://greve-choucroute-08006.herokuapp.com/api/v1/"')
+        variant.buildConfigField('String', 'BASE_URL', '"https://openspacehack20.herokuapp.com/api/v1/"')
     }
 }
 

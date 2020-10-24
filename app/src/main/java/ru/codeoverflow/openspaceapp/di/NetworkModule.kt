@@ -9,13 +9,14 @@ import org.koin.dsl.module
 import ru.codeoverflow.openspaceapp.BuildConfig.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import ru.codeoverflow.openspaceapp.BuildConfig
 import ru.codeoverflow.openspaceapp.model.server.OpenSpaceApi
 import ru.codeoverflow.openspaceapp.model.storage.Prefs
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
     factory { provideDefaultOkhttpClient(androidContext(), get()) }
-    single { provideOpenSpaceApi(provideRetrofit(androidContext(), "https://openspacehack20.herokuapp.com/api/v1/", get())) }
+    single { provideOpenSpaceApi(provideRetrofit(androidContext(), BASE_URL, get())) }
 }
 
 fun provideDefaultOkhttpClient(contex: Context, prefs: Prefs): OkHttpClient.Builder {
@@ -25,7 +26,7 @@ fun provideDefaultOkhttpClient(contex: Context, prefs: Prefs): OkHttpClient.Buil
             val newBuilder = it.request().newBuilder()
             prefs.token?.let { token ->
                 newBuilder
-                    .addHeader("Authorization","Bearer $token")
+                    .addHeader("Authorization", "Bearer $token")
             }
             it.proceed(newBuilder.build())
         }

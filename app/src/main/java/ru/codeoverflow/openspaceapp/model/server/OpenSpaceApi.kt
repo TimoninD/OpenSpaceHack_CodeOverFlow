@@ -19,7 +19,7 @@ interface OpenSpaceApi {
     @POST("users/verify")
     suspend fun verify(@Body body: PhoneVerifyRequest): ResponseWrapper<Unit>
 
-    @POST("address")
+    @POST("addresses")
     suspend fun createAddress(@Body body: CreateAddressRequest): ResponseWrapper<Unit>
 
     //@POST("")

@@ -7,10 +7,8 @@ import ru.codeoverflow.openspaceapp.model.server.OpenSpaceApi
 import ru.codeoverflow.openspaceapp.model.server.OpenSpaceApiML
 import java.io.File
 
-class ScannerInteractor(private val apiMl: OpenSpaceApiML, private val api: OpenSpaceApi) :
+class ScannerInteractor(private val apiMl: OpenSpaceApiML) :
     KoinComponent {
 
     suspend fun postMeterPhoto(image: File) = apiMl.postMeterPhoto(image.toFilePart())
-
-    suspend fun editMeter(request: EditMeterRequest) = api.editMeter(request)
 }
