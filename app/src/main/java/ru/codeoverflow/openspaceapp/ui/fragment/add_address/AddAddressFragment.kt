@@ -42,10 +42,12 @@ class AddAddressFragment : BaseFragment() {
         )
     }
 
-    private val activeTypeColorFilter by lazy { PorterDuffColorFilter(
-        resources.getColor(android.R.color.transparent, context?.theme),
-        PorterDuff.Mode.SRC_ATOP
-    ) }
+    private val activeTypeColorFilter by lazy {
+        PorterDuffColorFilter(
+            resources.getColor(android.R.color.transparent, context?.theme),
+            PorterDuff.Mode.SRC_ATOP
+        )
+    }
 
     private val inactiveTypeColorFilter by lazy {
         PorterDuffColorFilter(
@@ -78,7 +80,7 @@ class AddAddressFragment : BaseFragment() {
 
         btnApartment.setOnClickListener { vm.addressType.value = AddressType.APARTMENT }
         btnHouse.setOnClickListener { vm.addressType.value = AddressType.HOUSE }
-        btnVillage.setOnClickListener { vm.addressType.value = AddressType.DACHA }
+        btnVillage.setOnClickListener { vm.addressType.value = AddressType.VILLAGE }
         btnOffice.setOnClickListener { vm.addressType.value = AddressType.OFFICE }
 
 
@@ -106,7 +108,7 @@ class AddAddressFragment : BaseFragment() {
     private fun isCurrentIndicator(@IdRes id: Int, addressType: AddressType): Boolean {
         return when (addressType) {
             AddressType.APARTMENT -> id == R.id.btnApartmentImg
-            AddressType.DACHA -> id == R.id.btnVillageImg
+            AddressType.VILLAGE -> id == R.id.btnVillageImg
             AddressType.HOUSE -> id == R.id.btnHouseImg
             AddressType.OFFICE -> id == R.id.btnOfficeImg
             AddressType.NONE -> false

@@ -40,7 +40,7 @@ fun addressAddAdapterDelegate(onClick: (AddressType) -> Unit) =
         bind {
             itemView.btnApartment.setOnClickListener { onClick(AddressType.APARTMENT) }
             itemView.btnHouse.setOnClickListener { onClick(AddressType.HOUSE) }
-            itemView.btnVillage.setOnClickListener { onClick(AddressType.DACHA) }
+            itemView.btnVillage.setOnClickListener { onClick(AddressType.VILLAGE) }
             itemView.btnOffice.setOnClickListener { onClick(AddressType.OFFICE) }
         }
     }
