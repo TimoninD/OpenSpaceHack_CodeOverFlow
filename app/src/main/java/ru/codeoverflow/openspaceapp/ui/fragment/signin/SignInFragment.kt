@@ -1,15 +1,15 @@
 package ru.codeoverflow.openspaceapp.ui.fragment.signin
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
-import setMask
 import ru.codeoverflow.openspaceapp.viewmodel.signin.SignInViewModel
+import setMask
 
 class SignInFragment : BaseFragment() {
     override val layoutResId: Int = R.layout.fragment_sign_in
@@ -24,10 +24,13 @@ class SignInFragment : BaseFragment() {
                 btnNext.isEnabled = maskFilled
             }
         )
-        btnNext.setOnClickListener {
+        vm.signInResult.observe(viewLifecycleOwner, Observer {
             findNavController().navigate(
                 SignInFragmentDirections.actionSignInFragmentToCodeConfirmationFragment(etPhone.text.toString())
             )
+        })
+        btnNext.setOnClickListener {
+            vm.signIn(etPhone.text.toString())
         }
     }
 }

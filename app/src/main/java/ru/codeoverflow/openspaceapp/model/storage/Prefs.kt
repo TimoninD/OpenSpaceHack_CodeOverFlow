@@ -12,7 +12,7 @@ class Prefs constructor(
     //region auth
     private val AUTH_DATA = "auth_data"
     private val KEY_ACCESS_TOKEN = "access_token"
-    private val KEY_IS_FIRST_LAUNCH = "first_launch"
+    private val KEY_USER_ID = "first_launch"
 
 
     private val authPrefs by lazy { getSharedPreferences(AUTH_DATA) }
@@ -23,10 +23,10 @@ class Prefs constructor(
             authPrefs.edit().putString(KEY_ACCESS_TOKEN, value).apply()
         }
 
-    var isFirstLaunch: Boolean
-        get() = authPrefs.getBoolean(KEY_IS_FIRST_LAUNCH, true)
+    var userId: String?
+        get() = authPrefs.getString(KEY_USER_ID, null)
         set(value) {
-            authPrefs.edit().putBoolean(KEY_IS_FIRST_LAUNCH, value).apply()
+            authPrefs.edit().putString(KEY_USER_ID, value).apply()
         }
 
 }

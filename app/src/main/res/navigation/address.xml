@@ -26,7 +26,7 @@
         android:id="@+id/detailAddressFragment"
         android:name="ru.codeoverflow.openspaceapp.ui.fragment.detailaddress.DetailAddressFragment">
         <argument
-            android:name="addressModel"
-            app:argType="ru.codeoverflow.openspaceapp.entity.core.address.AddressModel" />
+            android:name="addressId"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -18,7 +18,7 @@ fun detailAddressAdapterDelegate() =
 
                 tvValue.text = if (item.value != null) context.getString(
                     R.string.detail_address_value_template,
-                    item.value
+                    item.value.format()
                 ) else context.getString(R.string.detail_address_value_empty)
                 tvPay.isVisible = item.value != null
                 btnScanner.isVisible = item.value == null

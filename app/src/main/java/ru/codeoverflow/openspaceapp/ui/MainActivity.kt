@@ -34,24 +34,16 @@ class MainActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             navController.popBackStack()
         }
-
         when {
-
-            prefs.isFirstLaunch -> {
-                /*prefs.isFirstLaunch = false
-                navGraph.startDestination = R.id.welcomeContainerFragment
-                navController.graph = navGraph*/
+            prefs.token != null -> {
+                navGraph.startDestination = R.id.homeFragment
                 navController.graph = navGraph
             }
-            prefs.token == null -> {
-
-            }
             else -> {
-                /*navGraph.startDestination = R.id.homeFragment
-                navController.graph = navGraph*/
+                navGraph.startDestination = R.id.signInFragment
+                navController.graph = navGraph
             }
         }
-
         mainActivityNavHostFragment.findNavController()
             .addOnDestinationChangedListener { _, destination, _ ->
                 toolbar.isVisible = !listWithoutToolbar.contains(destination.id)

@@ -6,12 +6,16 @@ import ru.codeoverflow.openspaceapp.R
 
 enum class AddressType(
     @DrawableRes val imageId: Int,
-    @StringRes val typeNameId: Int
+    @StringRes val typeNameId: Int,
+    val itemId: String
 ) {
-    APARTMENT(imageId = R.drawable.ic_apartment, typeNameId = R.string.apartment_type),
-    DACHA(imageId = R.drawable.ic_dacha, typeNameId = R.string.dacha_type),
-    HOUSE(imageId = R.drawable.ic_house, typeNameId = R.string.house_type),
-    OFFICE(imageId = R.drawable.ic_office, typeNameId = R.string.office_type),
-
-    NONE(imageId = 0, typeNameId = 0)
+    APARTMENT(
+        imageId = R.drawable.ic_apartment,
+        typeNameId = R.string.apartment_type,
+        itemId = "apartment"
+    ),
+    VILLAGE(imageId = R.drawable.ic_dacha, typeNameId = R.string.dacha_type, itemId = "village"),
+    HOUSE(imageId = R.drawable.ic_house, typeNameId = R.string.house_type, itemId = "house"),
+    OFFICE(imageId = R.drawable.ic_office, typeNameId = R.string.office_type, itemId = "office"),
+    NONE(imageId = 0, typeNameId = 0, itemId = "none")
 }

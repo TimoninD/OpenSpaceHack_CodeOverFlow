@@ -5,7 +5,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class MeterModel(
+    val id: String,
     val type: DetailAddressType,
-    val value: Int?,
-    val price: Float?
+    val value: Float?,
+    val price: Float?,
+    val isActive: Boolean,
+    val isPaid: Boolean
 ) : Parcelable

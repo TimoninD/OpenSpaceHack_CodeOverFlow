@@ -6,6 +6,8 @@
     <string name="statistic_title">История</string>
     <string name="setting_title">Настройки</string>
 
+    <string name="success_response">success</string>
+
     <string name="address_add">Добавить адрес</string>
 
     <string name="apartment_type">Квартира</string>
@@ -26,7 +28,7 @@
     <string name="detail_address_pay_all">Оплатить все</string>
     <string name="detail_address_indication">Показания:</string>
     <string name="detail_address_scanner">Сканировать</string>
-    <string name="detail_address_value_template">%d m</string>
+    <string name="detail_address_value_template">%s m\u2076</string>
     <string name="detail_address_value_empty">Нет показаний</string>
     <string name="detail_address_payed">Оплачено</string>
 

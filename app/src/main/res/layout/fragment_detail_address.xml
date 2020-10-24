@@ -11,21 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="12dp"
         android:text="@string/detail_address_total"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        style="@style/TextViewH12Blue113"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@id/tvTotal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvTotal"
-        tools:text="Ноябрь\n2020" />
 
     <Button
         android:id="@+id/btnPay"

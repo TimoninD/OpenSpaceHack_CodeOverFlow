@@ -2,6 +2,7 @@ package ru.codeoverflow.openspaceapp.ui.fragment.detailaddress
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import kotlinx.android.synthetic.main.fragment_detail_address.*
@@ -27,16 +28,23 @@ class DetailAddressFragment : BaseFragment() {
         )
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        vm.getDetailAddress(args.addressId)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(args.addressModel) {
 
-            tvTotal.text =
-                requireContext().getString(R.string.detail_address_total, totalPrice.format())
-            setTitle(address)
-            rvMeter.adapter = adapter
-            adapter.items = listMeter
-        }
+        vm.detailAddress.observe(viewLifecycleOwner, Observer {
+            with(it) {
+                tvTotal.text =
+                    requireContext().getString(R.string.detail_address_total, totalPrice.format())
+                setTitle(address)
+                rvMeter.adapter = adapter
+                adapter.items = listMeter
+            }
+        })
     }
 
 }

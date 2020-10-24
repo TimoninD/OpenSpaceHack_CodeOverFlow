@@ -29,17 +29,17 @@ class StatisticFragment : BaseFragment() {
         )
     }
 
-    private val testCurrentList = listOf(
+    /*private val testCurrentList = listOf(
         MeterModel(DetailAddressType.HOT_WATER, 15, 120.203f),
         MeterModel(DetailAddressType.COLD_WATER, 20, 40f),
         MeterModel(DetailAddressType.GAS, 5, 42f),
         MeterModel(DetailAddressType.LIGHTNING, null, 121f)
-    )
+    )*/
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        createPieChartView(testCurrentList)
+        //createPieChartView(testCurrentList)
 
         severityBarChart.data = BarData(
             BarDataSet(
