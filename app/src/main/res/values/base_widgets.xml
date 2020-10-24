@@ -28,10 +28,22 @@
         <item name="android:background">@drawable/bg_edit_text_app</item>
     </style>
 
+    <style name="BaseEditText.Phone">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textColor">@color/blue_113</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="hintTextColor">@color/blue_113_50</item>
+    </style>
+
     <style name="TextInputLayout" parent="Widget.Design.TextInputLayout">
         <item name="android:textColorHint">@color/second_text_color</item>
         <item name="hintTextColor">@color/second_text_color</item>
         <item name="android:textAppearance">@style/TextViewH14Blue113</item>
-
     </style>
 </resources>
