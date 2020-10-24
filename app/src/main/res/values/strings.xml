@@ -51,12 +51,10 @@
 
     <!-- Scanner -->
     <string name="scanner_description">Поднесите камеру к счетчику и сфотографируйте</string>
+    <string name="statistic_current_month">Текущий месяц</string>
+    <string name="statistic_recently_month">Последние месяцы</string>
 
     <string name="hint_phone">+7 (000) 000 00 00</string>
     <string name="mask_phone">+7 ([000]) [000] [00] [00]</string>
     <string name="sign_in_next">Далее</string>
-    <!-- Scanner -->
-    <string name="scanner_description">Поднесите камеру к счетчику и сфотографируйте</string>
-    <string name="statistic_current_month">Текущий месяц</string>
-    <string name="statistic_recently_month">Последние месяцы</string>
 </resources>
