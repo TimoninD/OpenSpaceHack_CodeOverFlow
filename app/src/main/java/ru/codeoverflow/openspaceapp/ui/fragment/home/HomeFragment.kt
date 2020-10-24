@@ -2,6 +2,7 @@ package ru.codeoverflow.openspaceapp.ui.fragment.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -26,6 +27,14 @@ class HomeFragment : BaseFragment() {
 
     private var navScopesIds: HashSet<String> = hashSetOf()
 
+    private val listWithoutToolbar =
+        listOf(
+            R.id.addressFragment,
+            R.id.scannerFragment,
+            R.id.statisticFragment,
+            R.id.settingsFragment
+        )
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -42,6 +51,10 @@ class HomeFragment : BaseFragment() {
             view.updatePadding(bottom = insets.systemWindowInsetBottom)
             insets
         }
+
+        toolbar.setNavigationOnClickListener {
+            currentNavController?.value?.popBackStack()
+        }
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
@@ -56,7 +69,7 @@ class HomeFragment : BaseFragment() {
         val navGraphIds = listOf(
             R.navigation.address,
             R.navigation.scanner,
-            R.navigation.history,
+            R.navigation.statistic,
             R.navigation.settings
         )
 
@@ -70,6 +83,7 @@ class HomeFragment : BaseFragment() {
         controller.observe(viewLifecycleOwner, Observer { navController ->
 
             currentNavController?.value?.addOnDestinationChangedListener { controller, destination, arguments ->
+                toolbar.isVisible = !listWithoutToolbar.contains(destination.id)
                 val navScopeId = getNavScopeName(controller.graph.label ?: "")
 
                 val navigatorScope =

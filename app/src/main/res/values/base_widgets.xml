@@ -16,7 +16,7 @@
     </style>
 
     <style name="BaseEditText" parent="Widget.AppCompat.EditText">
-        <item name="hintTextColor">@color/blue_113_50</item>
+        <item name="hintTextColor">@color/second_text_color</item>
         <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:maxLines">1</item>
@@ -38,12 +38,12 @@
         <item name="android:paddingBottom">0dp</item>
         <item name="android:textColor">@color/blue_113</item>
         <item name="android:background">@android:color/transparent</item>
-        <item name="hintTextColor">@color/blue_113_50</item>
+        <item name="hintTextColor">@color/first_text_color</item>
     </style>
 
     <style name="TextInputLayout" parent="Widget.Design.TextInputLayout">
-        <item name="android:textColorHint">@color/blue_113_50</item>
-        <item name="hintTextColor">@color/blue_113_50</item>
+        <item name="android:textColorHint">@color/second_text_color</item>
+        <item name="hintTextColor">@color/second_text_color</item>
         <item name="android:textAppearance">@style/TextViewH14Blue113</item>
     </style>
 </resources>

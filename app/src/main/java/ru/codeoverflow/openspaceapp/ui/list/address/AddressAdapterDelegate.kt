@@ -4,11 +4,11 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
 import kotlinx.android.synthetic.main.rv_address_item.view.*
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.entity.core.address.AddAddress
-import ru.codeoverflow.openspaceapp.entity.core.address.AddressItem
+import ru.codeoverflow.openspaceapp.entity.core.address.AddressModel
 import ru.codeoverflow.openspaceapp.entity.core.address.BaseAddress
 
-fun addressAdapterDelegate(onClick: () -> Unit) =
-    adapterDelegate<AddressItem, BaseAddress>(R.layout.rv_address_item) {
+fun addressAdapterDelegate(onClick: (AddressModel) -> Unit) =
+    adapterDelegate<AddressModel, BaseAddress>(R.layout.rv_address_item) {
 
         bind {
             with(itemView) {
@@ -16,7 +16,7 @@ fun addressAdapterDelegate(onClick: () -> Unit) =
                 ivIcon.setImageResource(item.type.imageId)
                 tvAddress.text = item.address
                 setOnClickListener {
-                    onClick.invoke()
+                    onClick.invoke(item)
                 }
             }
         }

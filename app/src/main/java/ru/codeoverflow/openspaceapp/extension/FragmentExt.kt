@@ -1,10 +1,18 @@
 package ru.codeoverflow.openspaceapp.extension
 
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_main.*
+import ru.codeoverflow.openspaceapp.ui.MainActivity
 import android.app.Activity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import androidx.fragment.app.Fragment
 
+
+fun Fragment.setTitle(title: String) {
+    if (requireActivity() is MainActivity) {
+        requireActivity().toolbar.title = title
+    }
+}
 
 fun Fragment.hideKeyboard() {
     val imm: InputMethodManager =

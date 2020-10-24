@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_address"
     android:layout_marginTop="16dp"
+    android:background="@drawable/bg_address"
     android:padding="18dp">
 
     <ImageView
@@ -17,25 +17,61 @@
 
     <TextView
         android:id="@+id/tvType"
+        style="@style/TextViewH14Blue113"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Квартира"
         android:layout_marginStart="16dp"
-        style="@style/TextViewH14Blue113"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivIcon"
-        app:layout_constraintTop_toTopOf="@id/ivIcon" />
+        app:layout_constraintTop_toTopOf="@id/ivIcon"
+        tools:text="Квартира" />
 
     <TextView
         android:id="@+id/tvAddress"
+        style="@style/TextViewH12Blue113"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="ул. Кубанская, д. 15а, кв. 36"
-        android:layout_marginTop="6dp"
         android:layout_marginStart="16dp"
-        style="@style/TextViewH12Blue113"
+        android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivIcon"
-        app:layout_constraintTop_toBottomOf="@id/tvType" />
+        app:layout_constraintTop_toBottomOf="@id/tvType"
+        tools:text="ул. Кубанская, д. 15а, кв. 36" />
+
+    <ImageView
+        android:id="@+id/ivColdWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
+        app:layout_constraintStart_toEndOf="@id/ivIcon"
+        android:src="@drawable/ic_little_water" />
+
+    <ImageView
+        android:id="@+id/ivHotWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
+        app:layout_constraintStart_toEndOf="@id/ivColdWater"
+        android:src="@drawable/ic_little_water" />
+
+    <ImageView
+        android:id="@+id/ivGas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
+        app:layout_constraintStart_toEndOf="@id/ivHotWater"
+        android:src="@drawable/ic_little_water" />
+
+    <ImageView
+        android:id="@+id/ivLightning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
+        app:layout_constraintStart_toEndOf="@id/ivGas"
+        android:src="@drawable/ic_little_water" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

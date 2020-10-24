@@ -4,11 +4,11 @@ import androidx.core.view.isVisible
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
 import kotlinx.android.synthetic.main.rv_detail_address_item.view.*
 import ru.codeoverflow.openspaceapp.R
-import ru.codeoverflow.openspaceapp.entity.core.detailaddress.DetailAddressItem
+import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 import ru.codeoverflow.openspaceapp.extension.format
 
 fun detailAddressAdapterDelegate() =
-    adapterDelegate<DetailAddressItem, DetailAddressItem>(R.layout.rv_detail_address_item) {
+    adapterDelegate<MeterModel, MeterModel>(R.layout.rv_detail_address_item) {
 
         bind {
             with(itemView) {
