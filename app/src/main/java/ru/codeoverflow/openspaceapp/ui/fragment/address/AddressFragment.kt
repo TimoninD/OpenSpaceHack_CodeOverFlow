@@ -34,7 +34,13 @@ class AddressFragment : BaseFragment() {
                     )
                 )
             },
-            addressAddAdapterDelegate { }
+            addressAddAdapterDelegate {
+                findNavController().navigate(
+                    AddressFragmentDirections.actionAddressFragmentToAddAddressFragment(
+                        it
+                    )
+                )
+            }
         ).apply {
             items = listOf(AddAddress())
         }

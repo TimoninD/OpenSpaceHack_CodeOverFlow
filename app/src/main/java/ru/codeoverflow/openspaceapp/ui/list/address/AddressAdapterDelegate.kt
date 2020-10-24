@@ -2,10 +2,12 @@ package ru.codeoverflow.openspaceapp.ui.list.address
 
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
+import kotlinx.android.synthetic.main.layout_address_add_card.view.*
 import kotlinx.android.synthetic.main.rv_address_item.view.*
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.entity.core.address.AddAddress
 import ru.codeoverflow.openspaceapp.entity.core.address.AddressModel
+import ru.codeoverflow.openspaceapp.entity.core.address.AddressType
 import ru.codeoverflow.openspaceapp.entity.core.address.BaseAddress
 import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 
@@ -32,13 +34,14 @@ fun addressAdapterDelegate(onClick: (AddressModel) -> Unit) =
         }
     }
 
-fun addressAddAdapterDelegate(onClick: () -> Unit) =
-    adapterDelegate<AddAddress, BaseAddress>(R.layout.rv_address_add_item) {
+fun addressAddAdapterDelegate(onClick: (AddressType) -> Unit) =
+    adapterDelegate<AddAddress, BaseAddress>(R.layout.layout_address_add_card) {
 
         bind {
-            itemView.setOnClickListener {
-                onClick.invoke()
-            }
+            itemView.btnApartment.setOnClickListener { onClick(AddressType.APARTMENT) }
+            itemView.btnHouse.setOnClickListener { onClick(AddressType.HOUSE) }
+            itemView.btnVillage.setOnClickListener { onClick(AddressType.DACHA) }
+            itemView.btnOffice.setOnClickListener { onClick(AddressType.OFFICE) }
         }
     }
 

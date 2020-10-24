@@ -16,6 +16,6 @@ enum class AddressType(
     ),
     VILLAGE(imageId = R.drawable.ic_dacha, typeNameId = R.string.dacha_type, itemId = "village"),
     HOUSE(imageId = R.drawable.ic_house, typeNameId = R.string.house_type, itemId = "house"),
-    OFFICE(imageId = R.drawable.ic_office, typeNameId = R.string.office_type, itemId = "office")
-
+    OFFICE(imageId = R.drawable.ic_office, typeNameId = R.string.office_type, itemId = "office"),
+    NONE(imageId = 0, typeNameId = 0, itemId = "none")
 }
