@@ -54,7 +54,7 @@
 
     <style name="TitleStyle" parent="BaseBold">
         <item name="android:textSize">32sp</item>
-        <item name="android:textColor">@color/black_1f2</item>
+        <item name="android:textColor">@color/first_text_color</item>
     </style>
 
 

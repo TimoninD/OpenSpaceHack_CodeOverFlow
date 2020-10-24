@@ -18,7 +18,7 @@
     <string name="lightning_type">Электричество</string>
 
     <!-- DetailAddress -->
-    <string name="detail_address_total">Итого: %d руб.</string>
+    <string name="detail_address_total">Итого: %s руб.</string>
     <string name="detail_address_pay_all">Оплатить все</string>
     <string name="detail_address_indication">Показания:</string>
     <string name="detail_address_scanner">Сканировать</string>

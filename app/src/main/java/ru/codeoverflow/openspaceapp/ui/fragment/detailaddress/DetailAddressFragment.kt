@@ -2,36 +2,38 @@ package ru.codeoverflow.openspaceapp.ui.fragment.detailaddress
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.navArgs
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
-import kotlinx.android.synthetic.main.fragment_address.*
 import kotlinx.android.synthetic.main.fragment_detail_address.*
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 import ru.codeoverflow.openspaceapp.R
-import ru.codeoverflow.openspaceapp.entity.core.detailaddress.DetailAddressItem
+import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 import ru.codeoverflow.openspaceapp.entity.core.detailaddress.DetailAddressType
+import ru.codeoverflow.openspaceapp.extension.format
+import ru.codeoverflow.openspaceapp.extension.setTitle
 import ru.codeoverflow.openspaceapp.ui.list.detailaddress.detailAddressAdapterDelegate
 
 class DetailAddressFragment : BaseFragment() {
     override val layoutResId: Int = R.layout.fragment_detail_address
 
-    private val testList = listOf(
-        DetailAddressItem(DetailAddressType.HOT_WATER, 15, 120.203f),
-        DetailAddressItem(DetailAddressType.COLD_WATER, 20, null),
-        DetailAddressItem(DetailAddressType.GAS, 5, null),
-        DetailAddressItem(DetailAddressType.LIGHTNING, null, null)
+    private val args: DetailAddressFragmentArgs by navArgs()
 
-    )
-
-    private val adapter: ListDelegationAdapter<List<DetailAddressItem>> by lazy {
-        ListDelegationAdapter<List<DetailAddressItem>>(
+    private val adapter: ListDelegationAdapter<List<MeterModel>> by lazy {
+        ListDelegationAdapter<List<MeterModel>>(
             detailAddressAdapterDelegate()
         )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rvMeter.adapter = adapter
-        adapter.items = testList
+        with(args.addressModel) {
+
+            tvTotal.text =
+                requireContext().getString(R.string.detail_address_total, totalPrice.format())
+            setTitle(address)
+            rvMeter.adapter = adapter
+            adapter.items = listMeter
+        }
     }
 
 }

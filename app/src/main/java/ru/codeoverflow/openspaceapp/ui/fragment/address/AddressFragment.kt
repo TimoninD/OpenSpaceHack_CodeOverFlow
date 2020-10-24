@@ -8,9 +8,11 @@ import kotlinx.android.synthetic.main.fragment_address.*
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.entity.core.address.AddAddress
-import ru.codeoverflow.openspaceapp.entity.core.address.AddressItem
+import ru.codeoverflow.openspaceapp.entity.core.address.AddressModel
 import ru.codeoverflow.openspaceapp.entity.core.address.AddressType
 import ru.codeoverflow.openspaceapp.entity.core.address.BaseAddress
+import ru.codeoverflow.openspaceapp.entity.core.detailaddress.DetailAddressType
+import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 import ru.codeoverflow.openspaceapp.ui.list.address.addressAdapterDelegate
 import ru.codeoverflow.openspaceapp.ui.list.address.addressAddAdapterDelegate
 
@@ -18,14 +20,35 @@ class AddressFragment : BaseFragment() {
     override val layoutResId: Int = R.layout.fragment_address
 
     private val testList = listOf(
-        AddressItem(AddressType.APARTMENT, "ул. Кубанская, д. 15а, кв. 36"),
-        AddressItem(AddressType.HOUSE, "ул. Мира, д. 106")
+        AddressModel(
+            type = AddressType.APARTMENT,
+            address = "ул. Даниила Тимонина, д. 106",
+            listMeter = listOf(
+                MeterModel(DetailAddressType.HOT_WATER, 15, 120.203f),
+                MeterModel(DetailAddressType.COLD_WATER, 20, null),
+                MeterModel(DetailAddressType.GAS, 5, null),
+                MeterModel(DetailAddressType.LIGHTNING, null, null)
+            ),
+            totalPrice = 120.203f
+        ),
+        AddressModel(
+            type = AddressType.HOUSE, address = "ул. Мира, д. 106", listMeter = listOf(
+                MeterModel(DetailAddressType.HOT_WATER, 15, 120.203f),
+                MeterModel(DetailAddressType.COLD_WATER, 20, null),
+                MeterModel(DetailAddressType.GAS, 5, null),
+                MeterModel(DetailAddressType.LIGHTNING, null, null)
+            ), totalPrice = 120.203f
+        )
     )
 
     private val adapter: ListDelegationAdapter<List<BaseAddress>> by lazy {
         ListDelegationAdapter<List<BaseAddress>>(
             addressAdapterDelegate {
-                findNavController().navigate(AddressFragmentDirections.actionAddressFragmentToDetailAddressFragment())
+                findNavController().navigate(
+                    AddressFragmentDirections.actionAddressFragmentToDetailAddressFragment(
+                        it
+                    )
+                )
             },
             addressAddAdapterDelegate { }
         ).apply {
