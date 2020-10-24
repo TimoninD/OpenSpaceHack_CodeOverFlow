@@ -33,7 +33,7 @@ fun addressAdapterDelegate(onClick: (AddressModel) -> Unit) =
     }
 
 fun addressAddAdapterDelegate(onClick: () -> Unit) =
-    adapterDelegate<AddAddress, BaseAddress>(R.layout.rv_address_add_item) {
+    adapterDelegate<AddAddress, BaseAddress>(R.layout.layout_address_add_card) {
 
         bind {
             itemView.setOnClickListener {

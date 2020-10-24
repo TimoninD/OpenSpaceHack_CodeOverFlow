@@ -19,7 +19,7 @@
         android:id="@+id/homeNavHostContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:tag="homeNavHostContainer"
+        android:tag="homeNцavHostContainer"
         app:layout_constraintBottom_toTopOf="@id/bottomMenu"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 

@@ -1,24 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvLabel"
-        style="@style/TextViewH12Blue113"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Город" />
-
-    <EditText
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="fsdfsdf"
-        app:layout_constraintTop_toBottomOf="@id/tvLabel" />
+        android:paddingHorizontal="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvAddressTitle"
+            style="@style/BaseMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/add_address_title_add"
+            android:textColor="@color/first_text_color"
+            android:textSize="32sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- City field -->
+        <TextView
+            android:id="@+id/tvCityHint"
+            style="@style/TextViewH12Blue113"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/add_address_city_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddressTitle" />
+
+        <EditText
+            android:id="@+id/etCity"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toStartOf="@id/btnDetectCity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCityHint" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnDetectCity"
+            style="@style/BaseButton"
+            android:layout_width="42dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_geolocation"
+            app:layout_constraintBottom_toBottomOf="@id/etCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etCity" />
+
+        <!-- Street field -->
+        <TextView
+            android:id="@+id/tvStreetHint"
+            style="@style/TextViewH12Blue113"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_address_street_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etCity" />
+
+        <EditText
+            android:id="@+id/etStreet"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStreetHint" />
+
+        <!-- House field -->
+        <TextView
+            android:id="@+id/tvHouseHint"
+            style="@style/TextViewH12Blue113"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_address_house"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etStreet" />
+
+        <EditText
+            android:id="@+id/etHouse"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHouseHint"
+            app:layout_constraintEnd_toStartOf="@id/etApartment"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Apartment field -->
+        <TextView
+            android:id="@+id/tvApartmentHint"
+            style="@style/TextViewH12Blue113"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_address_apartment"
+            app:layout_constraintStart_toStartOf="@id/etApartment"
+            app:layout_constraintTop_toTopOf="@id/tvHouseHint" />
+
+        <EditText
+            android:id="@+id/etApartment"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toTopOf="@id/etHouse"
+            app:layout_constraintStart_toEndOf="@id/etHouse"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Account field -->
+        <TextView
+            android:id="@+id/tvAccountHint"
+            style="@style/TextViewH12Blue113"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_address_account_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etApartment" />
+
+        <EditText
+            android:id="@+id/etAccount"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAccountHint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

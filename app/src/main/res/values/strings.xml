@@ -38,9 +38,21 @@
     <string name="code_confirmation_title">Подтвердите номер телефона</string>
     <string name="code_confirmation_description">Мы отправили вам код на номер\n%s.</string>
 
+    <!-- AddAddress -->
+    <string name="add_address_title_first_time">Заполните необходимую информацию</string>
+    <string name="add_address_title_add">Добавить адрес</string>
+    <string name="add_address_city_hint">Город</string>
+    <string name="add_address_street_hint">Улица</string>
+    <string name="add_address_house">Дом</string>
+    <string name="add_address_apartment">Квартира</string>
+    <string name="add_address_village">Дача</string>
+    <string name="add_address_account_hint">Лицевой счёт</string>
+    <string name="add_address_office">Офис</string>
+
+    <!-- Scanner -->
+    <string name="scanner_description">Поднесите камеру к счетчику и сфотографируйте</string>
+
     <string name="hint_phone">+7 (000) 000 00 00</string>
     <string name="mask_phone">+7 ([000]) [000] [00] [00]</string>
     <string name="sign_in_next">Далее</string>
-    <!-- Scanner -->
-    <string name="scanner_description">Поднесите камеру к счетчику и сфотографируйте</string>
 </resources>
