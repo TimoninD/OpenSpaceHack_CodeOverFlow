@@ -1,4 +1,4 @@
-package ru.codeoverflow.openspaceapp.entity.dto.camera
+package ru.codeoverflow.openspaceapp.entity.dto.response
 
 import ru.codeoverflow.openspaceapp.entity.core.scanner.MeterScanModel
 

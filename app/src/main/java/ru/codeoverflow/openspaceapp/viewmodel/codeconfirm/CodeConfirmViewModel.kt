@@ -1,4 +1,4 @@
-package ru.codeoverflow.openspaceapp.viewmodel.signin
+package ru.codeoverflow.openspaceapp.viewmodel.codeconfirm
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -8,17 +8,17 @@ import ru.codeoverflow.openspaceapp.model.interactor.AuthInteractor
 import ru.codeoverflow.openspaceapp.util.SingleLiveData
 import ru.codeoverflow.openspaceapp.viewmodel.BaseViewModel
 
-class SignInViewModel : BaseViewModel() {
+class CodeConfirmViewModel : BaseViewModel() {
     private val interactor: AuthInteractor by inject()
 
-    val signInResult: SingleLiveData<String> = SingleLiveData()
+    val codeConfirmResult: SingleLiveData<String> = SingleLiveData()
 
-    fun signIn(phone: String) {
+    fun verify(phoneString: String, code: String) {
         coroutineScope.launch {
             try {
-                val result = interactor.signIn(phone)
+                val result = interactor.verify(phoneString, code)
                 withContext(Dispatchers.Main) {
-                    signInResult.postValue(result)
+                    codeConfirmResult.postValue(result)
                 }
             } catch (t: Throwable) {
                 t.printStackTrace()

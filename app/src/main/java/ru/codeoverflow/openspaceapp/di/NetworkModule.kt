@@ -15,20 +15,20 @@ import java.util.concurrent.TimeUnit
 
 val networkModule = module {
     factory { provideDefaultOkhttpClient(androidContext(), get()) }
-    single { provideOpenSpaceApi(provideRetrofit(androidContext(), "https://8a5d4bb22183.ngrok.io/", get())) }
+    single { provideOpenSpaceApi(provideRetrofit(androidContext(), "https://openspacehack20.herokuapp.com/api/v1/", get())) }
 }
 
 fun provideDefaultOkhttpClient(contex: Context, prefs: Prefs): OkHttpClient.Builder {
     return OkHttpClient.Builder()
         .addInterceptor(ChuckerInterceptor(contex))
-        /*.addInterceptor {
+        .addInterceptor {
             val newBuilder = it.request().newBuilder()
             prefs.token?.let { token ->
                 newBuilder
                     .addHeader("Authorization","Bearer $token")
             }
             it.proceed(newBuilder.build())
-        }*/
+        }
         .readTimeout(90, TimeUnit.SECONDS)
         .connectTimeout(90, TimeUnit.SECONDS)
 }

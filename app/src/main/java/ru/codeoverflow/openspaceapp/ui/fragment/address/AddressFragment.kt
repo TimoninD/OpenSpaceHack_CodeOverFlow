@@ -2,6 +2,7 @@ package ru.codeoverflow.openspaceapp.ui.fragment.address
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import kotlinx.android.synthetic.main.fragment_address.*
@@ -23,7 +24,7 @@ class AddressFragment : BaseFragment() {
 
     private val vm: AddressViewModel by viewModel()
 
-    private val testList = listOf(
+    /*private val testList = listOf(
         AddressModel(
             type = AddressType.APARTMENT,
             address = "ул. Даниила Тимонина, д. 106",
@@ -43,7 +44,7 @@ class AddressFragment : BaseFragment() {
                 MeterModel(DetailAddressType.LIGHTNING, null, null)
             ), totalPrice = 120.203f
         )
-    )
+    )*/
 
     private val adapter: ListDelegationAdapter<List<BaseAddress>> by lazy {
         ListDelegationAdapter<List<BaseAddress>>(
@@ -63,6 +64,8 @@ class AddressFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvAddress.adapter = adapter
-        adapter.items = adapter.items + testList
+        vm.listAddress.observe(viewLifecycleOwner, Observer {
+            adapter.items = it
+        })
     }
 }

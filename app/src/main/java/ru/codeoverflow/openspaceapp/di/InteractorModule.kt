@@ -6,7 +6,7 @@ import ru.codeoverflow.openspaceapp.model.interactor.*
 val interactorModule = module {
     factory { AddressInteractor(get()) }
     factory { AuthInteractor(get()) }
-    factory { ScannerInteractor(get()) }
+    factory { ScannerInteractor(get(), get()) }
     factory { StatisticInteractor(get()) }
 
 }

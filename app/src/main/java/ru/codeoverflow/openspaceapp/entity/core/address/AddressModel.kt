@@ -9,7 +9,9 @@ data class AddressModel(
     val type: AddressType,
     val address: String,
     val listMeter: List<MeterModel>,
-    val totalPrice: Float
+    val totalPrice: Float,
+    val buildingType: String,
+    val personalAccount: String
 ) :
     BaseAddress(), Parcelable
 
