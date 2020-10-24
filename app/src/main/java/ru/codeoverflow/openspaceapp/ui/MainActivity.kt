@@ -2,6 +2,8 @@ package ru.codeoverflow.openspaceapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import org.koin.android.ext.android.getKoin
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
     private val prefs: Prefs by inject()
 
+    private val listWithoutToolbar = listOf(R.id.signInFragment, R.id.homeFragment)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         val graphInflater = navHostFragment.navController.navInflater
         val navGraph = graphInflater.inflate(R.navigation.main)
         val navController = navHostFragment.navController
+        toolbar.updatePaddingTopOnApplySystemWindowInsets()
+        toolbar.setNavigationOnClickListener {
+            navController.popBackStack()
+        }
 
         when {
 
@@ -45,8 +53,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainActivityNavHostFragment.findNavController()
-            .addOnDestinationChangedListener { controller, destination, arguments ->
-
+            .addOnDestinationChangedListener { _, destination, _ ->
+                toolbar.isVisible = !listWithoutToolbar.contains(destination.id)
             }
     }
 

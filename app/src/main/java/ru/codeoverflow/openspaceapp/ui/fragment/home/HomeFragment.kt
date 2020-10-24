@@ -2,6 +2,8 @@ package ru.codeoverflow.openspaceapp.ui.fragment.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.doOnLayout
+import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -14,6 +16,7 @@ import ru.codeoverflow.openspaceapp.di.getNavScopeName
 import ru.codeoverflow.openspaceapp.di.navScopeScopeName
 import ru.codeoverflow.openspaceapp.extension.removePaddingFromNavigationItem
 import ru.codeoverflow.openspaceapp.extension.setupWithNavController
+import ru.codeoverflow.openspaceapp.extension.updateMarginBottomOnApplySystemWindowInsets
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 import ru.codeoverflow.openspaceapp.ui.navigation.NavControllerNavigator
 import java.util.HashSet
@@ -25,6 +28,14 @@ class HomeFragment : BaseFragment() {
     private var currentNavController: LiveData<NavController>? = null
 
     private var navScopesIds: HashSet<String> = hashSetOf()
+
+    private val listWithoutToolbar =
+        listOf(
+            R.id.addressFragment,
+            R.id.scannerFragment,
+            R.id.historyFragment,
+            R.id.settingsFragment
+        )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,6 +52,10 @@ class HomeFragment : BaseFragment() {
         bottomMenu.setOnApplyWindowInsetsListener { view, insets ->
             view.updatePadding(bottom = insets.systemWindowInsetBottom)
             insets
+        }
+
+        toolbar.setNavigationOnClickListener {
+            currentNavController?.value?.popBackStack()
         }
     }
 
@@ -70,6 +85,7 @@ class HomeFragment : BaseFragment() {
         controller.observe(viewLifecycleOwner, Observer { navController ->
 
             currentNavController?.value?.addOnDestinationChangedListener { controller, destination, arguments ->
+                toolbar.isVisible = !listWithoutToolbar.contains(destination.id)
                 val navScopeId = getNavScopeName(controller.graph.label ?: "")
 
                 val navigatorScope =
