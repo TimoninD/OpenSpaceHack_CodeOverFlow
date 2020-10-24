@@ -8,25 +8,45 @@
     android:paddingEnd="16dp">
 
     <TextView
+        style="@style/TextViewH14Blue113"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/iconLogoBank"
+        app:layout_constraintBottom_toBottomOf="@id/iconLogoBank"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        android:text="Снимать показания\nсчетчиков - легко!"/>
+
+    <ImageView
+        android:id="@+id/iconLogoBank"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_logo_bank"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true" />
+
+
+    <TextView
         android:id="@+id/tvPhoneTitle"
-        style="@style/BaseMedium"
+        style="@style/Title28Style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="@string/sign_in_enter_phone_number"
         android:textColor="@color/first_text_color"
         android:textSize="32sp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/iconLogoBank" />
 
     <TextView
         android:id="@+id/tvPhoneDescription"
-        style="@style/BaseRegular"
+        style="@style/TextViewH16Blue113Regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/sign_in_we_will_send_password"
         android:textColor="@color/first_text_color"
-        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/tvPhoneTitle" />
 
     <EditText
@@ -35,6 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
+        android:layout_marginTop="24dp"
         android:hint="@string/hint_phone"
         app:layout_constraintTop_toBottomOf="@id/tvPhoneDescription"
         tools:text="+7" />

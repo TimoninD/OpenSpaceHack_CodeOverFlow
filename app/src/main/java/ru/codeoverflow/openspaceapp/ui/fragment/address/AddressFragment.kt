@@ -63,6 +63,6 @@ class AddressFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvAddress.adapter = adapter
-        adapter.items = adapter.items + testList
+        adapter.items = testList + adapter.items
     }
 }
