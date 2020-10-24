@@ -16,9 +16,14 @@ class SignInFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         etPhone.setMask(
             getString(R.string.mask_phone),
-            changeText = { maskFilled, extractedValue, formattedValue ->
+            changeText = { maskFilled, _, _ ->
                 btnNext.isEnabled = maskFilled
             }
         )
+        btnNext.setOnClickListener {
+            findNavController().navigate(
+                SignInFragmentDirections.actionSignInFragmentToCodeConfirmationFragment(etPhone.text.toString())
+            )
+        }
     }
 }
