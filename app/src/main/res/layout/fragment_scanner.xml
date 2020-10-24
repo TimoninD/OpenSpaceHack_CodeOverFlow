@@ -15,7 +15,7 @@
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/bg_scanner_description"
+        android:background="@drawable/bg_card_item"
         app:layout_constraintBottom_toBottomOf="@id/tvDescription"
         app:layout_constraintEnd_toEndOf="@id/tvDescription"
         app:layout_constraintStart_toStartOf="@id/tvDescription"
