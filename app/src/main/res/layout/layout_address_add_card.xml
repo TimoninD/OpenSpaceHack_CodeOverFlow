@@ -37,7 +37,7 @@
             android:id="@+id/btnApartmentImg"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_apartment_outlined"  />
+            android:src="@drawable/ic_apartment_outlined" />
         <TextView
             style="@style/TextViewH14Blue113"
             android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
             android:id="@+id/btnOfficeImg"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_house_outlined"  />
+            android:src="@drawable/ic_office_outlined"  />
         <TextView
             style="@style/TextViewH14Blue113"
             android:layout_width="wrap_content"

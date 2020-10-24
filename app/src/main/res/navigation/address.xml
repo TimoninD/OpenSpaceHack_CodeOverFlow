@@ -4,11 +4,22 @@
     android:id="@+id/address"
     app:startDestination="@id/addressFragment">
     <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="ru.codeoverflow.openspaceapp.ui.fragment.add_address.AddAddressFragment"
+        android:label="AddAddressFragment">
+        <argument
+            android:name="addressType"
+            app:argType="ru.codeoverflow.openspaceapp.entity.core.address.AddressType" />
+    </fragment>
+    <fragment
         android:id="@+id/addressFragment"
         android:name="ru.codeoverflow.openspaceapp.ui.fragment.address.AddressFragment">
         <action
             android:id="@+id/action_addressFragment_to_detailAddressFragment"
             app:destination="@id/detailAddressFragment" />
+        <action
+            android:id="@+id/action_addressFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
     </fragment>
 
     <fragment
