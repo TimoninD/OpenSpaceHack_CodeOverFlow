@@ -38,40 +38,17 @@
         app:layout_constraintTop_toBottomOf="@id/tvType"
         tools:text="ул. Кубанская, д. 15а, кв. 36" />
 
-    <ImageView
-        android:id="@+id/ivColdWater"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAddressMeter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="@id/ivIcon"
         app:layout_constraintStart_toEndOf="@id/ivIcon"
-        android:src="@drawable/ic_little_water" />
-
-    <ImageView
-        android:id="@+id/ivHotWater"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
-        app:layout_constraintStart_toEndOf="@id/ivColdWater"
-        android:src="@drawable/ic_little_water" />
-
-    <ImageView
-        android:id="@+id/ivGas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
-        app:layout_constraintStart_toEndOf="@id/ivHotWater"
-        android:src="@drawable/ic_little_water" />
-
-    <ImageView
-        android:id="@+id/ivLightning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
-        app:layout_constraintStart_toEndOf="@id/ivGas"
-        android:src="@drawable/ic_little_water" />
+        tools:itemCount="4"
+        tools:listitem="@layout/rv_address_meter_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

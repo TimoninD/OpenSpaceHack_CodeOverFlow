@@ -46,10 +46,15 @@
         <item name="android:textColor">@color/blue_113</item>
         <item name="android:textSize">24sp</item>
     </style>
-    
+
     <style name="TextViewH17Blue113Bold" parent="BaseBold">
         <item name="android:textColor">@color/blue_113</item>
         <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextViewH20FirstMedium" parent="BaseMedium">
+        <item name="android:textColor">@color/first_text_color</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="TitleStyle" parent="BaseBold">

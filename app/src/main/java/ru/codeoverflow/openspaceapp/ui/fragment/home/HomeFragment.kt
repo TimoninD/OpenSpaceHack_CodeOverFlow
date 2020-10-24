@@ -31,8 +31,7 @@ class HomeFragment : BaseFragment() {
         listOf(
             R.id.addressFragment,
             R.id.scannerFragment,
-            R.id.statisticFragment,
-            R.id.settingsFragment
+            R.id.statisticFragment
         )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,8 +68,7 @@ class HomeFragment : BaseFragment() {
         val navGraphIds = listOf(
             R.navigation.address,
             R.navigation.scanner,
-            R.navigation.statistic,
-            R.navigation.settings
+            R.navigation.statistic
         )
 
         val controller = bottomMenu.setupWithNavController(

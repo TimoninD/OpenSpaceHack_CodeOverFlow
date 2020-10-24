@@ -13,6 +13,8 @@
     <string name="dacha_type">Дача</string>
     <string name="office_type">Офис</string>
 
+    <string name="default_error">Что-то пошло не так…</string>
+
     <string name="cold_water_type">Холодная вода</string>
     <string name="hot_water_type">Горячая вода</string>
     <string name="gas_type">Газ</string>
@@ -39,4 +41,6 @@
     <string name="hint_phone">+7 (000) 000 00 00</string>
     <string name="mask_phone">+7 ([000]) [000] [00] [00]</string>
     <string name="sign_in_next">Далее</string>
+    <!-- Scanner -->
+    <string name="scanner_description">Поднесите камеру к счетчику и сфотографируйте</string>
 </resources>

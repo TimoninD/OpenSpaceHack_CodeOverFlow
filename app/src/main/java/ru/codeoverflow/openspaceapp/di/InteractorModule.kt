@@ -7,7 +7,6 @@ val interactorModule = module {
     factory { AddressInteractor(get()) }
     factory { AuthInteractor(get()) }
     factory { ScannerInteractor(get()) }
-    factory { SettingsInteractor(get()) }
     factory { StatisticInteractor(get()) }
 
 }
