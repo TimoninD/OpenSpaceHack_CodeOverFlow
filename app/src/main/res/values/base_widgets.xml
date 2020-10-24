@@ -12,12 +12,12 @@
         <item name="android:contentInsetEnd">0dp</item>
         <item name="android:paddingTop">0dp</item>
         <item name="android:paddingBottom">0dp</item>
-        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:fontFamily">@font/graphik_medium</item>
     </style>
 
     <style name="BaseEditText" parent="Widget.AppCompat.EditText">
         <item name="hintTextColor">@color/second_text_color</item>
-        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:fontFamily">@font/graphik_medium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:maxLines">1</item>
         <item name="android:paddingBottom">14dp</item>
@@ -29,7 +29,7 @@
     </style>
 
     <style name="BaseEditText.Phone">
-        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:fontFamily">@font/druk_medium</item>
         <item name="android:textSize">28sp</item>
         <item name="android:maxLines">1</item>
         <item name="android:paddingStart">0dp</item>

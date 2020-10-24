@@ -43,7 +43,7 @@
 
     <TextView
         android:id="@+id/tvIndication"
-        style="@style/TextViewH18Blue1138SemiBold"
+        style="@style/TextViewH14Blue113"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

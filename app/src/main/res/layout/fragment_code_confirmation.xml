@@ -9,18 +9,16 @@
 
     <TextView
         android:id="@+id/tvConfirmationTitle"
-        style="@style/BaseMedium"
+        style="@style/Title32Style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="@string/code_confirmation_title"
-        android:textColor="@color/first_text_color"
-        android:textSize="32sp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvConfirmationDescription"
-        style="@style/BaseRegular"
+        style="@style/TextViewH16Blue113Regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -32,6 +30,7 @@
     <com.alimuzaffar.lib.pin.PinEntryEditText
         android:id="@+id/etPinCode"
         android:layout_width="match_parent"
+        android:fontFamily="@font/druk_medium"
         android:layout_height="100dp"
         android:cursorVisible="true"
         android:digits="1234567890"

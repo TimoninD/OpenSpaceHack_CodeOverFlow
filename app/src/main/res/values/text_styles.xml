@@ -2,19 +2,15 @@
 <resources>
 
     <style name="BaseRegular">
-        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:fontFamily">@font/graphik_regular</item>
     </style>
 
     <style name="BaseMedium">
-        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:fontFamily">@font/graphik_medium</item>
     </style>
 
     <style name="BaseBold">
-        <item name="android:fontFamily">@font/montserrat_bold</item>
-    </style>
-
-    <style name="BaseSemiBold">
-        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:fontFamily">@font/graphik_bold</item>
     </style>
 
     <style name="TextViewH19White" parent="BaseMedium">
@@ -32,14 +28,9 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="TextViewH14Blue113SemiBold" parent="BaseSemiBold">
+    <style name="TextViewH16Blue113Regular" parent="BaseRegular">
         <item name="android:textColor">@color/blue_113</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="TextViewH18Blue1138SemiBold" parent="BaseSemiBold">
-        <item name="android:textColor">@color/blue_113</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="TextViewH24Blue1138Bold" parent="BaseBold">
@@ -57,8 +48,15 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="TitleStyle" parent="BaseBold">
+    <style name="Title32Style" parent="BaseBold">
+        <item name="android:fontFamily">@font/druk_medium</item>
         <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/first_text_color</item>
+    </style>
+
+    <style name="Title28Style" parent="BaseBold">
+        <item name="android:fontFamily">@font/druk_medium</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/first_text_color</item>
     </style>
 
