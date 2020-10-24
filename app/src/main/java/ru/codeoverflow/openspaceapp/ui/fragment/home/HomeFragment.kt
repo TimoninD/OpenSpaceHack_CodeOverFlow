@@ -2,7 +2,6 @@ package ru.codeoverflow.openspaceapp.ui.fragment.home
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.doOnLayout
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
 import androidx.lifecycle.LiveData
@@ -16,7 +15,6 @@ import ru.codeoverflow.openspaceapp.di.getNavScopeName
 import ru.codeoverflow.openspaceapp.di.navScopeScopeName
 import ru.codeoverflow.openspaceapp.extension.removePaddingFromNavigationItem
 import ru.codeoverflow.openspaceapp.extension.setupWithNavController
-import ru.codeoverflow.openspaceapp.extension.updateMarginBottomOnApplySystemWindowInsets
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 import ru.codeoverflow.openspaceapp.ui.navigation.NavControllerNavigator
 import java.util.HashSet
@@ -33,7 +31,7 @@ class HomeFragment : BaseFragment() {
         listOf(
             R.id.addressFragment,
             R.id.scannerFragment,
-            R.id.historyFragment,
+            R.id.statisticFragment,
             R.id.settingsFragment
         )
 
@@ -71,7 +69,7 @@ class HomeFragment : BaseFragment() {
         val navGraphIds = listOf(
             R.navigation.address,
             R.navigation.scanner,
-            R.navigation.history,
+            R.navigation.statistic,
             R.navigation.settings
         )
 

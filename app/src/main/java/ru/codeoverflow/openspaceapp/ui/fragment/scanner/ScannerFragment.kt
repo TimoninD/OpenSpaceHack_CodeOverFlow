@@ -11,17 +11,22 @@ import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.fragment_scanner.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
+import ru.codeoverflow.openspaceapp.util.LuminosityAnalyzer
+import ru.codeoverflow.openspaceapp.viewmodel.scanner.ScannerViewModel
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
-import ru.codeoverflow.openspaceapp.util.LuminosityAnalyzer
 
 class ScannerFragment : BaseFragment() {
     override val layoutResId: Int = R.layout.fragment_scanner
+
+    private val vm: ScannerViewModel by viewModel()
+
     private var imageCapture: ImageCapture? = null
 
     private val outputDirectoryFile: File by lazy {
