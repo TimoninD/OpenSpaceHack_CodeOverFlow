@@ -13,9 +13,9 @@
             app:argType="string"
             app:nullable="true" />
         <argument
-            android:name="meterId"
+            android:name="meter"
             android:defaultValue="@null"
-            app:argType="string"
+            app:argType="ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel"
             app:nullable="true" />
     </fragment>
 </navigation>

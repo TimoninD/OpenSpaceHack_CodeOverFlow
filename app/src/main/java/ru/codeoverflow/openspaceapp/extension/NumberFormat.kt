@@ -8,7 +8,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 
-fun Number?.format(): String {
+fun Number.format(): String {
     val price = BigDecimal(toString()).abs()
     val pattern =
         if (price.setScale(0, RoundingMode.FLOOR) == price
