@@ -20,6 +20,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.entity.core.address.AddressType
 import ru.codeoverflow.openspaceapp.model.storage.Prefs
+import ru.codeoverflow.openspaceapp.extension.hideKeyboard
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 import ru.codeoverflow.openspaceapp.viewmodel.addaddress.AddAddressViewModel
 
@@ -87,6 +88,7 @@ class AddAddressFragment : BaseFragment() {
         }
 
         vm.addressCreateResult.observe(viewLifecycleOwner, Observer {
+            hideKeyboard()
             findNavController().navigate(AddAddressFragmentDirections.actionAddAddressFragmentToAddressFragment())
         })
 
