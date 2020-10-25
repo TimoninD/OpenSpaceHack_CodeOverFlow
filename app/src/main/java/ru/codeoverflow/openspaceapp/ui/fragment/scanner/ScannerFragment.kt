@@ -10,6 +10,7 @@ import androidx.camera.core.ImageCapture.FLASH_MODE_OFF
 import androidx.camera.core.ImageCapture.FLASH_MODE_ON
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_scanner.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -51,6 +52,17 @@ class ScannerFragment : BaseFragment() {
                 } else {
                     FLASH_MODE_ON
                 }
+        }
+
+        vm.meterResult.observe(viewLifecycleOwner) {
+            if (it.value != null) {
+                // Show on success state
+            } else {
+                // Show on failed state
+            }
+        }
+        vm.meterEditResult.observe(viewLifecycleOwner) {
+            findNavController().popBackStack()
         }
 
     }

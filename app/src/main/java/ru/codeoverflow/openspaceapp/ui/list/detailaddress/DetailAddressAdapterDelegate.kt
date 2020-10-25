@@ -7,7 +7,7 @@ import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 import ru.codeoverflow.openspaceapp.extension.format
 
-fun detailAddressAdapterDelegate(onScanBtnClick: (String) -> Unit) =
+fun detailAddressAdapterDelegate(onScanBtnClick: (MeterModel) -> Unit) =
     adapterDelegate<MeterModel, MeterModel>(R.layout.rv_detail_address_item) {
 
         bind {
@@ -30,7 +30,7 @@ fun detailAddressAdapterDelegate(onScanBtnClick: (String) -> Unit) =
                 }
 
                 btnScanner.setOnClickListener {
-                    onScanBtnClick.invoke(item.id)
+                    onScanBtnClick.invoke(item)
                 }
 
             }
