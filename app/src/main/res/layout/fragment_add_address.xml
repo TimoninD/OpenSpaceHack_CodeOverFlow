@@ -40,6 +40,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:inputType="text"
+            android:nextFocusDown="@id/etStreet"
             app:layout_constraintEnd_toStartOf="@id/btnDetectCity"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCityHint" />
@@ -72,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:inputType="text"
+            android:nextFocusDown="@id/etHouse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvStreetHint" />
@@ -93,11 +95,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
             android:inputType="text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvHouseHint"
+            android:nextFocusDown="@id/etApartment"
             app:layout_constraintEnd_toStartOf="@id/etApartment"
-            android:layout_marginEnd="8dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHouseHint" />
 
         <!-- Apartment field -->
         <TextView
@@ -114,11 +117,12 @@
             style="@style/BaseEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:inputType="numberDecimal"
-            app:layout_constraintTop_toTopOf="@id/etHouse"
-            app:layout_constraintStart_toEndOf="@id/etHouse"
+            android:nextFocusDown="@id/etAccount"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintStart_toEndOf="@id/etHouse"
+            app:layout_constraintTop_toTopOf="@id/etHouse" />
 
         <!-- Account field -->
         <TextView

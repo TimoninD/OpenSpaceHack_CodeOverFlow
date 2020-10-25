@@ -58,7 +58,7 @@ class StatisticFragment : BaseFragment() {
             override fun getFormattedValue(value: Float): String {
                 return getString(
                     R.string.default_price,
-                    pieChart.defaultValueFormatter.getFormattedValue(value).toFloatOrNull().format()
+                    pieChart.defaultValueFormatter.getFormattedValue(value).toFloatOrNull()?.format()
                 )
             }
         }

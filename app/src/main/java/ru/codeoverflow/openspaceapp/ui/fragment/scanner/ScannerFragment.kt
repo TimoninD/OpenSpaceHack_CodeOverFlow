@@ -61,7 +61,7 @@ class ScannerFragment : BaseFragment() {
 
         vm.meterResult.observe(viewLifecycleOwner) { meterModel ->
             if (meterModel.value != null) {
-                viewBg.isVisible = false
+                bgDescription.isVisible = false
                 tvDescription.isVisible = false
                 layoutConfirm.isVisible = true
                 ivTakePhoto.isEnabled = false
@@ -83,7 +83,7 @@ class ScannerFragment : BaseFragment() {
                             Toast.LENGTH_SHORT
                         ).show()
 
-                        viewBg.isVisible = true
+                        bgDescription.isVisible = true
                         tvDescription.isVisible = true
                         layoutConfirm.isVisible = false
                         ivTakePhoto.isEnabled = true
@@ -91,7 +91,7 @@ class ScannerFragment : BaseFragment() {
                 }
 
                 layoutConfirm.btnTryAgain.setOnClickListener {
-                    viewBg.isVisible = true
+                    bgDescription.isVisible = true
                     tvDescription.isVisible = true
                     layoutConfirm.isVisible = false
                     ivTakePhoto.isEnabled = true

@@ -57,6 +57,7 @@ class DetailAddressFragment : BaseFragment() {
                     requireContext().getString(R.string.detail_address_total, totalPrice.format())
                 rvMeter.adapter = adapter
                 adapter.items = listMeter
+                adapter.notifyDataSetChanged()
             }
         })
     }

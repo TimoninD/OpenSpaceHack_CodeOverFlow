@@ -24,7 +24,7 @@ fun detailAddressAdapterDelegate(onScanBtnClick: (MeterModel) -> Unit) =
                 btnScanner.isVisible = item.value == null
 
                 tvPay.text = if (item.price != null) {
-                    context.getString(R.string.default_price, item.price.format())
+                    context.getString(R.string.default_price, item.price?.format())
                 } else {
                     context.getString(R.string.detail_address_payed)
                 }
