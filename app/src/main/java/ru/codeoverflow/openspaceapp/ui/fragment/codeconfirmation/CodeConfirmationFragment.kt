@@ -3,6 +3,8 @@ package ru.codeoverflow.openspaceapp.ui.fragment.codeconfirmation
 import android.location.Address
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -39,6 +41,15 @@ class CodeConfirmationFragment : BaseFragment() {
                 CodeConfirmationFragmentDirections.actionCodeConfirmationFragmentToHomeFragment()
             )
         })
+
+        vm.isLoading.observe(viewLifecycleOwner, Observer {
+            pbLoading.isVisible = it
+        })
+
+        vm.isError.observe(viewLifecycleOwner, Observer {
+            Toast.makeText(context, R.string.default_error, Toast.LENGTH_SHORT).show()
+        })
+
         etPinCode.setOnPinEnteredListener { pinCode ->
             if (pinCode.length == PIN_CODE_LENGTH || pinCode.toString() == "1234") {
                 vm.verify(args.phone, etPinCode.text.toString())
