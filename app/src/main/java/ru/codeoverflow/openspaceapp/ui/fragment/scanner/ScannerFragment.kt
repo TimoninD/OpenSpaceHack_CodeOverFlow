@@ -10,9 +10,12 @@ import androidx.camera.core.ImageCapture.FLASH_MODE_OFF
 import androidx.camera.core.ImageCapture.FLASH_MODE_ON
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_scanner.*
+import kotlinx.android.synthetic.main.layout_scanner_check_info.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
@@ -30,6 +33,8 @@ class ScannerFragment : BaseFragment() {
     private val vm: ScannerViewModel by viewModel()
 
     private var imageCapture: ImageCapture? = null
+
+    private val args: ScannerFragmentArgs by navArgs()
 
     private val errorToast by lazy {
         Toast.makeText(requireContext(), R.string.default_error, Toast.LENGTH_LONG)
@@ -54,14 +59,49 @@ class ScannerFragment : BaseFragment() {
                 }
         }
 
-        vm.meterResult.observe(viewLifecycleOwner) {
-            if (it.value != null) {
-                // Show on success state
+        vm.meterResult.observe(viewLifecycleOwner) { meterModel ->
+            if (meterModel.value != null) {
+                viewBg.isVisible = false
+                tvDescription.isVisible = false
+                layoutConfirm.isVisible = true
+                ivTakePhoto.isEnabled = false
+
+                layoutConfirm.etIndication.setText(meterModel.value)
+
+                layoutConfirm.btnNext.setOnClickListener {
+                    if (args.meter != null) {
+                        args.meter?.let {
+                            vm.editMeter(
+                                addressId = args.addressId.orEmpty(),
+                                meterModel = it.copy(value = layoutConfirm.etIndication.text.toString())
+                            )
+                        }
+                    } else {
+                        Toast.makeText(
+                            requireContext(),
+                            "Фича находится в доработке, данные: serialNumber:${meterModel.serialNumber} value:${meterModel.value}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        viewBg.isVisible = true
+                        tvDescription.isVisible = true
+                        layoutConfirm.isVisible = false
+                        ivTakePhoto.isEnabled = true
+                    }
+                }
+
+                layoutConfirm.btnTryAgain.setOnClickListener {
+                    viewBg.isVisible = true
+                    tvDescription.isVisible = true
+                    layoutConfirm.isVisible = false
+                    ivTakePhoto.isEnabled = true
+                }
             } else {
-                // Show on failed state
+                Toast.makeText(requireContext(), R.string.ml_error, Toast.LENGTH_SHORT).show()
             }
         }
         vm.meterEditResult.observe(viewLifecycleOwner) {
+            ivTakePhoto.isEnabled = true
             findNavController().popBackStack()
         }
 

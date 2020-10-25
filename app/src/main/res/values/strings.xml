@@ -16,6 +16,7 @@
     <string name="office_type">Офис</string>
 
     <string name="default_error">Произошла ошибка! Пожалуйста, попробуйте еще раз.</string>
+    <string name="ml_error">Не удалось распознать значения счетчика. Попробуйте снова</string>
     <string name="default_price">%s руб.</string>
     <string name="address">г.%s, %s, д.%s, кв.%s</string>
 
@@ -29,7 +30,7 @@
     <string name="detail_address_pay_all">Оплатить все</string>
     <string name="detail_address_indication">Показания:</string>
     <string name="detail_address_scanner">Сканировать</string>
-    <string name="detail_address_value_template">%s m\u2076</string>
+    <string name="detail_address_value_template">%s m³</string>
     <string name="detail_address_value_empty">Нет показаний</string>
     <string name="detail_address_payed">Оплачено</string>
 
@@ -55,6 +56,9 @@
 
     <!-- Scanner -->
     <string name="scanner_description">Поднесите камеру к счетчику и сфотографируйте</string>
+    <string name="scanner_fill_information_title">Заполните необходимую информацию</string>
+    <string name="scanner_fill_information_address">Адрес</string>
+
     <string name="statistic_current_month">Текущий месяц</string>
     <string name="statistic_recently_month">Последние месяцы</string>
 
@@ -66,4 +70,8 @@
     <string name="add_address_add_btn">Добавить</string>
     <string name="add_address_select_type">Пожалуйста, выберите тип адреса</string>
     <string name="add_address_fill_all_fields">Пожалуйста, заполните все поля</string>
+    <string name="scanner_check_info_indication">Показания</string>
+    <string name="scanner_next">Далее</string>
+    <string name="scanner_try_again">Сфотографировать снова</string>
+
 </resources>

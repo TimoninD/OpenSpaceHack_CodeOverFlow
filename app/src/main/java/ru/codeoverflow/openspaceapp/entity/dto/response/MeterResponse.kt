@@ -7,8 +7,8 @@ import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 data class MeterResponse(
     @SerializedName("_id") val id: String,
     @SerializedName("meterType") val meterType: String,
-    @SerializedName("value") val value: Float?,
-    @SerializedName("price") val price: Float?,
+    @SerializedName("value") val value: String?,
+    @SerializedName("price") val price: Int?,
     @SerializedName("isPaid") val isPaid: Boolean,
     @SerializedName("isActive") val isActive: Boolean
 )

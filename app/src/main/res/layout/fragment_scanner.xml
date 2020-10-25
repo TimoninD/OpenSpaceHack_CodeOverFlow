@@ -13,6 +13,7 @@
 
 
     <View
+        android:id="@+id/viewBg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_card_item"
@@ -36,6 +37,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <include
+        android:id="@+id/layoutConfirm"
+        layout="@layout/layout_scanner_check_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivTakePhoto"

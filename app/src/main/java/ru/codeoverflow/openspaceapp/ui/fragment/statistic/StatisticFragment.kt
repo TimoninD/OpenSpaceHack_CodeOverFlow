@@ -31,10 +31,10 @@ class StatisticFragment : BaseFragment() {
     }
 
     private val testCurrentList = listOf(
-        MeterModel(id = "", type = DetailAddressType.HOT_WATER, value = 15f, price = 120.203f),
-        MeterModel(id = "", type = DetailAddressType.COLD_WATER, value = 5f, price = 60f),
-        MeterModel(id = "", type = DetailAddressType.GAS, value = 20f, price = 100f),
-        MeterModel(id = "", type = DetailAddressType.LIGHTNING, value = null, price = 40f)
+        MeterModel(id = "", type = DetailAddressType.HOT_WATER, value = "15", price = 120),
+        MeterModel(id = "", type = DetailAddressType.COLD_WATER, value = "5", price = 60),
+        MeterModel(id = "", type = DetailAddressType.GAS, value = "5", price = 100),
+        MeterModel(id = "", type = DetailAddressType.LIGHTNING, value = null, price = 40)
     )
 
 
@@ -47,7 +47,7 @@ class StatisticFragment : BaseFragment() {
     private fun createPieChartView(list: List<MeterModel>) {
         val dataSet = PieDataSet(list.map {
             PieEntry(
-                it.price ?: 0f,
+                it.price?.toFloat() ?: 0f,
                 requireActivity().getString(it.type.typeNameId)
             )
         }, "")
