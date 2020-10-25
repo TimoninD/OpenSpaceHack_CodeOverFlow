@@ -18,7 +18,7 @@ val networkModuleMl = module {
     single(named("mlRetrofit")) {
         provideMLRetrofit(
             androidContext(),
-            "https://8a5d4bb22183.ngrok.io/",
+            "http://sorokin.asuscomm.com:4567/",
             get()
         )
     }
