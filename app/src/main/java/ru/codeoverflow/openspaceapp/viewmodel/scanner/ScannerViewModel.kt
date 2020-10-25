@@ -23,10 +23,13 @@ class ScannerViewModel : BaseViewModel() {
 
     val meterResult: MutableLiveData<MeterScanModel> = MutableLiveData()
     val meterEditResult: MutableLiveData<String> = MutableLiveData()
+    val isLoading: MutableLiveData<Boolean> = MutableLiveData(false)
 
     fun postMeterImage(image: File) {
         coroutineScope.launch {
+            isLoading.postValue(true)
             try {
+
                 val result = interactor.postMeterPhoto(image)
                 withContext(Dispatchers.Main) {
                     meterResult.postValue(result)
@@ -34,6 +37,7 @@ class ScannerViewModel : BaseViewModel() {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+            isLoading.postValue(false)
         }
     }
 

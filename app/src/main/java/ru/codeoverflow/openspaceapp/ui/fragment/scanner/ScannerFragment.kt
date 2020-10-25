@@ -10,6 +10,7 @@ import androidx.camera.core.ImageCapture.FLASH_MODE_OFF
 import androidx.camera.core.ImageCapture.FLASH_MODE_ON
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_scanner.*
@@ -65,6 +66,9 @@ class ScannerFragment : BaseFragment() {
             findNavController().popBackStack()
         }
 
+        vm.isLoading.observe(viewLifecycleOwner) {
+            pbLoading.isVisible = it
+        }
     }
 
     private fun takePhoto() {
