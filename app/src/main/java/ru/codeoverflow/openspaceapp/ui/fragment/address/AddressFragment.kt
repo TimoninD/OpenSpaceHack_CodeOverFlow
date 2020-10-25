@@ -12,11 +12,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.entity.core.address.AddAddress
-import ru.codeoverflow.openspaceapp.entity.core.address.AddressModel
 import ru.codeoverflow.openspaceapp.entity.core.address.AddressType
 import ru.codeoverflow.openspaceapp.entity.core.address.BaseAddress
-import ru.codeoverflow.openspaceapp.entity.core.detailaddress.DetailAddressType
-import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 import ru.codeoverflow.openspaceapp.model.storage.Prefs
 import ru.codeoverflow.openspaceapp.ui.list.address.addressAdapterDelegate
 import ru.codeoverflow.openspaceapp.ui.list.address.addressAddAdapterDelegate

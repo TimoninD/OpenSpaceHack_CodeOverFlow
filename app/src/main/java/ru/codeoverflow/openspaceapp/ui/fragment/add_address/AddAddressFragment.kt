@@ -87,7 +87,7 @@ class AddAddressFragment : BaseFragment() {
         }
 
         vm.addressCreateResult.observe(viewLifecycleOwner, Observer {
-            findNavController().popBackStack()
+            findNavController().navigate(AddAddressFragmentDirections.actionAddAddressFragmentToAddressFragment())
         })
 
         vm.addressType.value = args.addressType

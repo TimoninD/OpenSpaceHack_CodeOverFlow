@@ -10,6 +10,11 @@
         <argument
             android:name="addressType"
             app:argType="ru.codeoverflow.openspaceapp.entity.core.address.AddressType" />
+        <action
+            android:id="@+id/action_addAddressFragment_to_addressFragment"
+            app:destination="@id/addressFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/addressFragment" />
     </fragment>
     <fragment
         android:id="@+id/addressFragment"
