@@ -38,6 +38,9 @@ class DetailAddressFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         vm.getDetailAddress(args.addressId)
+        toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
 
         vm.detailAddress.observe(viewLifecycleOwner, Observer {
             with(it) {

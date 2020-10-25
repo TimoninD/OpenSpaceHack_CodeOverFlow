@@ -9,6 +9,6 @@ data class MeterModel(
     val type: DetailAddressType,
     val value: Float?,
     val price: Float?,
-    val isActive: Boolean,
-    val isPaid: Boolean
+    val isActive: Boolean = false,
+    val isPaid: Boolean = false
 ) : Parcelable
