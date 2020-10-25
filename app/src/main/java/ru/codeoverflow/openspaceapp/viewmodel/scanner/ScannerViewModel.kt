@@ -29,8 +29,7 @@ class ScannerViewModel : BaseViewModel() {
         coroutineScope.launch {
             isLoading.postValue(true)
             try {
-                val result =
-                    MeterScanModel("123321a123", "123321123")//interactor.postMeterPhoto(image)
+                val result = interactor.postMeterPhoto(image)
                 withContext(Dispatchers.Main) {
                     meterResult.postValue(result)
                 }
