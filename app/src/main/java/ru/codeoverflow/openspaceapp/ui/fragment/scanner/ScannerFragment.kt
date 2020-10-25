@@ -35,7 +35,7 @@ class ScannerFragment : BaseFragment() {
     private var imageCapture: ImageCapture? = null
 
     private val args: ScannerFragmentArgs by navArgs()
-
+ 
     private val errorToast by lazy {
         Toast.makeText(requireContext(), R.string.default_error, Toast.LENGTH_LONG)
     }
