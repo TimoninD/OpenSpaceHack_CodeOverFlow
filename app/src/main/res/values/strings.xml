@@ -36,6 +36,7 @@
     <!-- SingIn -->
     <string name="sign_in_enter_phone_number">Введите номер телефона</string>
     <string name="sign_in_we_will_send_password">Мы отправим вам временный пароль на этот номер телефона</string>
+    <string name="sign_in_title">Снимать показания \n счетчиков - легко!</string>
 
     <!-- CodeConfirmation -->
     <string name="code_confirmation_title">Подтвердите номер телефона</string>
