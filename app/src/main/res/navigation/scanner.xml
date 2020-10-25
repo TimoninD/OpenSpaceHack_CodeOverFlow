@@ -6,5 +6,16 @@
 
     <fragment
         android:id="@+id/scannerFragment"
-        android:name="ru.codeoverflow.openspaceapp.ui.fragment.scanner.ScannerFragment" />
+        android:name="ru.codeoverflow.openspaceapp.ui.fragment.scanner.ScannerFragment">
+        <argument
+            android:name="addressId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="meterId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

@@ -3,6 +3,7 @@ package ru.codeoverflow.openspaceapp.ui.fragment.detailaddress
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import kotlinx.android.synthetic.main.fragment_detail_address.*
@@ -23,7 +24,13 @@ class DetailAddressFragment : BaseFragment() {
 
     private val adapter: ListDelegationAdapter<List<MeterModel>> by lazy {
         ListDelegationAdapter<List<MeterModel>>(
-            detailAddressAdapterDelegate()
+            detailAddressAdapterDelegate {
+                val destination =
+                    DetailAddressFragmentDirections.actionDetailAddressFragmentToScanner()
+                destination.addressId = args.addressId
+                destination.meterId = it
+                findNavController().navigate(destination)
+            }
         )
     }
 
