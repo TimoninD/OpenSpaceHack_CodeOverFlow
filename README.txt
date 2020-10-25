@@ -5,6 +5,6 @@
 4. Сам запуск - через апк, ссылка :https://drive.google.com/drive/folders/1c3_RHekivtlHGsZbO2I2D-O7wLmdzgcx?usp=sharing
 
 https://drive.google.com/file/d/1VapCLz9vIw8Wk9QfNQwgfDUZLv3tRhPJ/view?usp=sharing - Нейронка( не смогли закинуть так, потому что много весит(500мб))
-https://drive.google.com/drive/folders/1dpUjjmuCjnQgLq241SA4WmwA7mkLo7iS
-http://sorokin.asuscomm.com:4567/upload - роут для работы нейронки
+https://drive.google.com/drive/folders/1dpUjjmuCjnQgLq241SA4WmwA7mkLo7iS - папка с нейронка и сервер
+http://sorokin.asuscomm.com:4567/upload - роут для работы нейронки, передавать параметр файл
 
