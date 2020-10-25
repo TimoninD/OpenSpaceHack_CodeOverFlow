@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
     android:background="@drawable/bg_address"
     android:paddingVertical="18dp">
 
@@ -21,95 +22,103 @@
         android:id="@+id/spaceAddAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvAddAddress"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvAddAddress" />
 
     <LinearLayout
         android:id="@+id/btnApartment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnHouse"
-        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress"
-        android:gravity="center">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress">
+
         <ImageView
             android:id="@+id/btnApartmentImg"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/ic_apartment_outlined" />
+
         <TextView
             style="@style/TextViewH14Blue113"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_address_apartment"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:text="@string/add_address_apartment" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btnHouse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@id/btnApartment"
         app:layout_constraintEnd_toStartOf="@id/btnVillage"
-        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress"
-        android:gravity="center">
+        app:layout_constraintStart_toEndOf="@id/btnApartment"
+        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress">
+
         <ImageView
             android:id="@+id/btnHouseImg"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_house_outlined"  />
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_house_outlined" />
+
         <TextView
             style="@style/TextViewH14Blue113"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_address_house"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:text="@string/add_address_house" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btnVillage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@id/btnHouse"
         app:layout_constraintEnd_toStartOf="@id/btnOffice"
-        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress"
-        android:gravity="center">
+        app:layout_constraintStart_toEndOf="@id/btnHouse"
+        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress">
+
         <ImageView
             android:id="@+id/btnVillageImg"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_village_outlined"  />
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_village_outlined" />
+
         <TextView
             style="@style/TextViewH14Blue113"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_address_village"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:text="@string/add_address_village" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btnOffice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@id/btnVillage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress"
-        android:gravity="center">
+        app:layout_constraintStart_toEndOf="@id/btnVillage"
+        app:layout_constraintTop_toTopOf="@+id/spaceAddAddress">
+
         <ImageView
             android:id="@+id/btnOfficeImg"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_office_outlined"  />
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_office_outlined" />
+
         <TextView
             style="@style/TextViewH14Blue113"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_address_office"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:text="@string/add_address_office" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

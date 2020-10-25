@@ -31,7 +31,8 @@ class HomeFragment : BaseFragment() {
         listOf(
             R.id.addressFragment,
             R.id.scannerFragment,
-            R.id.statisticFragment
+            R.id.statisticFragment,
+            R.id.detailAddressFragment
         )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

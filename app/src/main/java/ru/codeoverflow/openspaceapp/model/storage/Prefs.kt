@@ -13,6 +13,7 @@ class Prefs constructor(
     private val AUTH_DATA = "auth_data"
     private val KEY_ACCESS_TOKEN = "access_token"
     private val KEY_USER_ID = "first_launch"
+    private val IS_FIRST_ADD_SHOW = "first add show"
 
 
     private val authPrefs by lazy { getSharedPreferences(AUTH_DATA) }
@@ -27,6 +28,12 @@ class Prefs constructor(
         get() = authPrefs.getString(KEY_USER_ID, null)
         set(value) {
             authPrefs.edit().putString(KEY_USER_ID, value).apply()
+        }
+
+    var isFirstAddShow: Boolean
+        get() = authPrefs.getBoolean(IS_FIRST_ADD_SHOW, false)
+        set(value) {
+            authPrefs.edit().putBoolean(IS_FIRST_ADD_SHOW, value).apply()
         }
 
 }
