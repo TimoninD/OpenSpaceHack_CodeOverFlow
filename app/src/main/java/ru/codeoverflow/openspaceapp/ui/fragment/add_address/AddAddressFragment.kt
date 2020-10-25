@@ -9,14 +9,17 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.IdRes
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_add_address.*
 import kotlinx.android.synthetic.main.layout_address_add_card.*
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.codeoverflow.openspaceapp.R
 import ru.codeoverflow.openspaceapp.entity.core.address.AddressType
+import ru.codeoverflow.openspaceapp.model.storage.Prefs
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 import ru.codeoverflow.openspaceapp.viewmodel.addaddress.AddAddressViewModel
 
@@ -56,6 +59,13 @@ class AddAddressFragment : BaseFragment() {
         )
     }
 
+    private val prefs: Prefs by inject()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        prefs.isFirstAddShow = true
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -75,6 +85,10 @@ class AddAddressFragment : BaseFragment() {
                 activateBuildingType(addressType)
             }
         }
+
+        vm.addressCreateResult.observe(viewLifecycleOwner, Observer {
+            findNavController().popBackStack()
+        })
 
         vm.addressType.value = args.addressType
 
@@ -128,9 +142,15 @@ class AddAddressFragment : BaseFragment() {
             return
         }
 
-        findNavController().navigate(
-            AddAddressFragmentDirections.actionAddAddressFragmentToHomeFragment()
+        val address = getString(
+            R.string.address,
+            etCity.text.toString(),
+            etStreet.text.toString(),
+            etHouse.text.toString(),
+            etApartment.text.toString()
         )
+        vm.createAddress(address = address, personalAccount = etAccount.text.toString())
+
     }
 
     private fun validateField(editText: EditText) {

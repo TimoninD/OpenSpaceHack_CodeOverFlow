@@ -13,7 +13,7 @@ class AddressInteractor(private val api: OpenSpaceApi) {
         api.getAllAddress().data?.doc?.listAddress?.find { it.id == addressId }?.toModel()
 
     suspend fun createAddress(createAddressRequest: CreateAddressRequest) =
-        api.createAddress(createAddressRequest)
+        api.createAddress(createAddressRequest).status
 
     suspend fun editMeter(request: EditMeterRequest) = api.editMeter(request)
 

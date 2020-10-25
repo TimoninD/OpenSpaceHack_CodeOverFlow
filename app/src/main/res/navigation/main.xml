@@ -29,16 +29,4 @@
         android:id="@+id/homeFragment"
         android:name="ru.codeoverflow.openspaceapp.ui.fragment.home.HomeFragment" />
 
-    <fragment
-        android:id="@+id/addAddressFragment"
-        android:name="ru.codeoverflow.openspaceapp.ui.fragment.add_address.AddAddressFragment"
-        android:label="AddAddressFragment" >
-        <action
-            android:id="@+id/action_addAddressFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <argument
-            android:name="addressType"
-            app:argType="ru.codeoverflow.openspaceapp.entity.core.address.AddressType" />
-    </fragment>
-
 </navigation>

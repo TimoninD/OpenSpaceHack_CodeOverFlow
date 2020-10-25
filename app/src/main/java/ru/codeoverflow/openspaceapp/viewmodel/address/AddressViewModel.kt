@@ -23,7 +23,7 @@ class AddressViewModel : BaseViewModel() {
         getAllAddress()
     }
 
-    private fun getAllAddress() {
+    fun getAllAddress() {
         coroutineScope.launch {
             try {
                 val result = interactor.getAllAddress()
