@@ -15,7 +15,7 @@
     <string name="dacha_type">Дача</string>
     <string name="office_type">Офис</string>
 
-    <string name="default_error">Что-то пошло не так…</string>
+    <string name="default_error">Произошла ошибка! Пожалуйста, попробуйте еще раз.</string>
     <string name="default_price">%s руб.</string>
     <string name="address">г.%s, %s, д.%s, кв.%s</string>
 

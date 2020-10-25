@@ -1,5 +1,6 @@
 package ru.codeoverflow.openspaceapp.viewmodel.codeconfirm
 
+import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -13,16 +14,23 @@ class CodeConfirmViewModel : BaseViewModel() {
 
     val codeConfirmResult: SingleLiveData<String> = SingleLiveData()
 
+    val isLoading: MutableLiveData<Boolean> = MutableLiveData(false)
+
+    val isError: SingleLiveData<Boolean> = SingleLiveData()
+
     fun verify(phoneString: String, code: String) {
         coroutineScope.launch {
+            isLoading.postValue(true)
             try {
                 val result = interactor.verify(phoneString, code)
                 withContext(Dispatchers.Main) {
                     codeConfirmResult.postValue(result)
                 }
             } catch (t: Throwable) {
+                isError.postValue(true)
                 t.printStackTrace()
             }
+            isLoading.postValue(false)
         }
     }
 }
