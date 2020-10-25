@@ -105,6 +105,9 @@ class ScannerFragment : BaseFragment() {
             findNavController().popBackStack()
         }
 
+        vm.isLoading.observe(viewLifecycleOwner) {
+            pbLoading.isVisible = it
+        }
     }
 
     private fun takePhoto() {
