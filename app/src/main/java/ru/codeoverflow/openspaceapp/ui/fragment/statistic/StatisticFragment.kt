@@ -1,5 +1,6 @@
 package ru.codeoverflow.openspaceapp.ui.fragment.statistic
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import com.github.mikephil.charting.components.Legend
@@ -14,7 +15,7 @@ import ru.codeoverflow.openspaceapp.entity.core.detailaddress.MeterModel
 import ru.codeoverflow.openspaceapp.extension.format
 import ru.codeoverflow.openspaceapp.ui.common.BaseFragment
 
-
+// Мы не успели сделать бэк для этого экрана, поэтому все данные - mock
 class StatisticFragment : BaseFragment() {
     override val layoutResId: Int = R.layout.fragment_statistic
 
@@ -29,18 +30,61 @@ class StatisticFragment : BaseFragment() {
         )
     }
 
-    /*private val testCurrentList = listOf(
-        MeterModel(DetailAddressType.HOT_WATER, 15, 120.203f),
-        MeterModel(DetailAddressType.COLD_WATER, 20, 40f),
-        MeterModel(DetailAddressType.GAS, 5, 42f),
-        MeterModel(DetailAddressType.LIGHTNING, null, 121f)
-    )*/
+    private val testCurrentList = listOf(
+        MeterModel(id = "", type = DetailAddressType.HOT_WATER, value = 15f, price = 120.203f),
+        MeterModel(id = "", type = DetailAddressType.COLD_WATER, value = 5f, price = 60f),
+        MeterModel(id = "", type = DetailAddressType.GAS, value = 20f, price = 100f),
+        MeterModel(id = "", type = DetailAddressType.LIGHTNING, value = null, price = 40f)
+    )
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //createPieChartView(testCurrentList)
+        createPieChartView(testCurrentList)
+        createBarChartView()
+    }
 
+    private fun createPieChartView(list: List<MeterModel>) {
+        val dataSet = PieDataSet(list.map {
+            PieEntry(
+                it.price ?: 0f,
+                requireActivity().getString(it.type.typeNameId)
+            )
+        }, "")
+        dataSet.colors = listColors
+        dataSet.valueTextColor = colorWhite
+        dataSet.valueTextSize = 8f
+        dataSet.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return getString(
+                    R.string.default_price,
+                    pieChart.defaultValueFormatter.getFormattedValue(value).toFloatOrNull().format()
+                )
+            }
+        }
+        val data = PieData(dataSet)
+        pieChart.data = data
+        pieChart.invalidate()
+        pieChart.setDrawEntryLabels(false)
+        pieChart.isDrawHoleEnabled = false
+        pieChart.contentDescription = ""
+        pieChart.holeRadius = 40f
+        pieChart.description.isEnabled = false
+
+
+        val legend = pieChart.legend
+        legend.form = Legend.LegendForm.CIRCLE
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.CENTER
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.RIGHT
+        legend.orientation = Legend.LegendOrientation.VERTICAL
+        legend.yEntrySpace = 8f
+        legend.textColor = resources.getColor(R.color.second_text_color, null)
+        legend.textSize = 12f
+        legend.formSize = 10f
+        legend.formToTextSpace = 12f
+    }
+
+    private fun createBarChartView() {
         severityBarChart.data = BarData(
             BarDataSet(
                 listOf(
@@ -67,44 +111,5 @@ class StatisticFragment : BaseFragment() {
         severityBarChart.xAxis.isEnabled = true
         severityBarChart.xAxis.position = XAxisPosition.BOTTOM
         severityBarChart.invalidate()
-    }
-
-    private fun createPieChartView(list: List<MeterModel>) {
-        val dataSet = PieDataSet(list.map {
-            PieEntry(
-                it.price ?: 0f,
-                requireActivity().getString(it.type.typeNameId)
-            )
-        }, "")
-        dataSet.colors = listColors
-        dataSet.valueTextColor = colorWhite
-        dataSet.valueTextSize = 8f
-        dataSet.valueFormatter = object : ValueFormatter() {
-            override fun getFormattedValue(value: Float): String {
-                return getString(
-                    R.string.default_price,
-                    pieChart.defaultValueFormatter.getFormattedValue(value).toFloatOrNull().format()
-                )
-            }
-        }
-        val data = PieData(dataSet)
-        pieChart.data = data
-        pieChart.invalidate()
-        pieChart.setDrawEntryLabels(false)
-        pieChart.contentDescription = ""
-        pieChart.holeRadius = 40f
-        pieChart.description.isEnabled = false
-
-
-        val legend = pieChart.legend
-        legend.form = Legend.LegendForm.CIRCLE
-        legend.verticalAlignment = Legend.LegendVerticalAlignment.CENTER
-        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.RIGHT
-        legend.orientation = Legend.LegendOrientation.VERTICAL
-        legend.yEntrySpace = 8f
-        legend.textColor = resources.getColor(R.color.second_text_color, null)
-        legend.textSize = 12f
-        legend.formSize = 10f
-        legend.formToTextSpace = 12f
     }
 }

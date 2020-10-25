@@ -15,6 +15,6 @@ class AddressInteractor(private val api: OpenSpaceApi) {
     suspend fun createAddress(createAddressRequest: CreateAddressRequest) =
         api.createAddress(createAddressRequest).status
 
-    suspend fun editMeter(request: EditMeterRequest) = api.editMeter(request)
+    suspend fun editMeter(request: EditMeterRequest) = api.editMeter(request).status
 
 }

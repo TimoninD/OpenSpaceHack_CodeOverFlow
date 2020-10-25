@@ -28,19 +28,19 @@ class DetailAddressFragment : BaseFragment() {
                 val destination =
                     DetailAddressFragmentDirections.actionDetailAddressFragmentToScanner()
                 destination.addressId = args.addressId
-                destination.meterId = it
+                destination.meter = it
                 findNavController().navigate(destination)
             }
         )
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        vm.getDetailAddress(args.addressId)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        vm.getDetailAddress(args.addressId)
+        toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
 
         vm.detailAddress.observe(viewLifecycleOwner, Observer {
             with(it) {
